@@ -1,26 +1,31 @@
-html,
-body {
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import "fonts";
+
+:root {
+  --app-red-1: #ec0f46;
+  --app-red-2: #fc1410;
+  --app-red-3: #8e1400;
+  --app-purple-1: #808cff;
+  --app-purple-2: #6300b4;
+  --app-purple-3: #de39ff;
+  --app-blue-1: #1a1a3e;
+  --app-blue-2: #0A1B26;
+  --app-blue-3: #191F26;
+  --app-gray-1: #1b1b1b;
+  --app-white-1: #ffffff;
+  --app-black-1: #000000;
+}
+
+// Reset
+*, body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, var(--app-gray-1), var(--app-purple-2));
 }
+
+// Reset

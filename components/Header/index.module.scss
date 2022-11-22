@@ -1,0 +1,111 @@
+.headerWrapper {
+  padding: 16px 24px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  border: 10px solid transparent;
+  border-top: 10px solid #fffa;
+  border-left: 10px solid #fffa;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40%;
+  height: 80px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #fffa;
+  border-right: 10px solid #fffa;
+  pointer-events: none;
+  transition: 0.3s linear all;
+}
+
+.headerMain {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  .headerLogoBall {
+    position: relative;
+    animation: bounce 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+
+  .eye {
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+}
+
+.headerLogoPart{
+  font-size: 16px;
+  margin-left: 2px;
+  color: var(--app-white-1);
+  font-family: 'Rubik Microbe', cursive;
+}
+
+.headerSocials {
+  display: flex;
+  gap: 16px;
+  padding: 0 24px;
+}
+
+.headerSocialIcon {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--app-white-1);
+  transform: translateY(0);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.24));
+  transition: 0.1s filter ease-in, 0.2s transform ease-in;
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25)) drop-shadow(0 10px 10px rgba(0, 0, 0, 0.22));
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+  }
+  50% {
+    transform: translateY(22px) scaleY(1);
+  }
+  55% {
+    transform: translateY(26px) scaleY(0.9);
+  }
+  65% {
+    transform: translateY(22px) scaleY(1);
+  }
+  95% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes blink {
+  50% {
+    transform: translateY(0) scaleY(1);
+  }
+  55% {
+    transform: translateY(6px) scaleY(0.4);
+  }
+  60% {
+    transform: translateY(0) scaleY(1);
+  }
+}
