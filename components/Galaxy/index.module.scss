@@ -11,16 +11,16 @@ $perspective: 100vw;
 
 // distance, ratioSize, ratioTimeOrbit, ratioTimeRotation, color, transform
 $planets: (
-                (0   ,  1  ,  5,  6  , #ec0f46, (1, 1, 1)),
-                (2.5 , .5  , .5, .8  , #de39ff, (1, 0, 0)),
-                (2   , .6  , .3, .4  , #1d9bf0, (0, 1, 0)),
-                (1.6 ,  1  ,  1,  1  , #de39ff, (0, 0, 1)),
-                (2.4 , .8  ,  2,  1.5, #1d9bf0, (1, 1, 0)),
-                (1.2 , .65 ,  4,  3  , #de39ff, (1, 0, 1)),
-                (2   , 1.25,  2,  2  , #1d9bf0, (-1, 0, 0)),
-                (3.2 , 1.3 , .6,  2  , #de39ff, (0, 1, 1)),
-                (2   , .6  , .8,  1  , #1d9bf0, (0, -1, -1)),
-                (1.5 , .5  ,  4,  3  , #de39ff, (0, 1, -1)),
+                (0, 1, 5, 6, #ec0f46, (1, 1, 1)),
+                (2.5, .5, .5, .8, #de39ff, (1, 0, 0)),
+                (2, .6, .3, .4, #1d9bf0, (0, 1, 0)),
+                (1.6, 1, 1, 1, #de39ff, (0, 0, 1)),
+                (2.4, .8, 2, 1.5, #1d9bf0, (1, 1, 0)),
+                (1.2, .65, 4, 3, #de39ff, (1, 0, 1)),
+                (2, 1.25, 2, 2, #1d9bf0, (-1, 0, 0)),
+                (3.2, 1.3, .6, 2, #de39ff, (0, 1, 1)),
+                (2, .6, .8, 1, #1d9bf0, (0, -1, -1)),
+                (1.5, .5, 4, 3, #de39ff, (0, 1, -1)),
 );
 
 %center {
@@ -225,22 +225,48 @@ $planets: (
   perspective: $perspective;
 }
 
-.title {
-  top: 30%;
-  z-index: 1;
+.info {
+  top: 40%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
   position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
   font-size: 60px;
   text-align: center;
+  color: var(--app-black-1);
+  animation: 1s fadeInRight ease-out;
 }
 
 .description {
-  position: absolute;
-  top: 40%;
+  font-size: 24px;
   font-weight: 400;
-  width: 50%;
-  font-size: 30px;
+  padding: 16px 32px;
   line-height: 40px;
   text-align: center;
+  position: relative;
+  display: inline-block;
+  color: var(--app-white-1);
+  animation: 1s fadeInLeft ease-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--app-black-1);
+    z-index: -1;
+    clip-path: url(#clip);
+  }
 }
 
 .galaxy {
@@ -290,5 +316,27 @@ $planets: (
 @keyframes orbit {
   100% {
     transform: rotate3d(0, 1, 0, 360deg)
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0px);
   }
 }

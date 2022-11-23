@@ -38,11 +38,13 @@ const Hero = () => {
                     <span className={styles.headerSocialIcon}>
                         <i className={'icon-linkedin'}></i>
                     </span>
+                    <span
+                        className={classNames('text-16', 'text-black', 'cursor-pointer', styles.headerSocialIcon)}>LET’S TALK</span>
                 </div>
             </div>
             <Galaxy
                 title={'The Web3 Innovation Hub'}
-                description={'We help companies to build on web3 technology and capture the potential from a growing decentralized token economy.'}
+                description={'Capture the potential from a growing decentralized token economy'}
             />
         </div>
     )

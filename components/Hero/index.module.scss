@@ -11,7 +11,7 @@
 }
 
 .headerMenu {
-  width: 160px;
+  width: 250px;
 
   label {
     display: flex;
@@ -52,19 +52,24 @@
 
 .headerSocials {
   display: flex;
+  align-items: center;
   gap: 16px;
-  width: 160px;
+  width: 250px;
   padding: 0 24px;
 }
 
 .headerSocialIcon {
-  cursor: pointer;
-  font-size: 24px;
-  color: var(--app-black-1);
-  transform: translateY(0);
-  transition: 0.1s filter ease-in, 0.2s transform ease-in;
+  i {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--app-black-1);
+    transform: translateY(0);
+    transition: 0.1s filter ease-in, 0.2s transform ease-in;
+  }
 
   &:hover {
-    transform: translateY(-2px);
+    i {
+      transform: translateY(-2px);
+    }
   }
 }

@@ -15,6 +15,7 @@
   --app-blue-3: #191F26;
   --app-gray-1: #1b1b1b;
   --app-white-1: #ffffff;
+  --app-white-2: #e7e9ea;
   --app-black-1: #000000;
   --app-yellow-1: #ebcd60;;
   --app-yellow-2: #ffef43;;
@@ -37,3 +38,50 @@ body {
 }
 
 // Reset
+
+// Main
+.text-black {
+  color: var(--app-black-1);
+}
+
+.text-white {
+  color: var(--app-white-1);
+}
+
+.text-12 {
+  font-size: 12px;
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-16 {
+  font-size: 16px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-24 {
+  font-size: 24px;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+.text-48 {
+  font-size: 48px;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// Main
