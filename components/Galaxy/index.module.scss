@@ -1,0 +1,294 @@
+$baseSize: 2vw;
+$baseTimeOrbit: 3s;
+$baseTimeRotation: 4s;
+$ratioBackground: .25;
+$ratioBorder: .0005;
+$ratioShadow: .25;
+$ratioOrbit: .05;
+$darken: 10%;
+$lighten: 20%;
+$perspective: 100vw;
+
+// distance, ratioSize, ratioTimeOrbit, ratioTimeRotation, color, transform
+$planets: (
+                (0   ,  1  ,  5,  6  , #ec0f46, (1, 1, 1)),
+                (2.5 , .5  , .5, .8  , #de39ff, (1, 0, 0)),
+                (2   , .6  , .3, .4  , #1d9bf0, (0, 1, 0)),
+                (1.6 ,  1  ,  1,  1  , #de39ff, (0, 0, 1)),
+                (2.4 , .8  ,  2,  1.5, #1d9bf0, (1, 1, 0)),
+                (1.2 , .65 ,  4,  3  , #de39ff, (1, 0, 1)),
+                (2   , 1.25,  2,  2  , #1d9bf0, (-1, 0, 0)),
+                (3.2 , 1.3 , .6,  2  , #de39ff, (0, 1, 1)),
+                (2   , .6  , .8,  1  , #1d9bf0, (0, -1, -1)),
+                (1.5 , .5  ,  4,  3  , #de39ff, (0, 1, -1)),
+);
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin position( $position ) {
+  left: $position;
+  transform-origin: -$position;
+}
+
+@mixin orbit( $size, $distance ) {
+  $orbitBorder: $size * $ratioOrbit;
+  $orbitSize: $distance * 2 + $orbitBorder;
+  $orbitDistance: 2 * $orbitBorder;
+  $orbitSizeBefore: $orbitSize - $orbitDistance;
+  $orbitSizeAfter: $orbitSize + $orbitDistance;
+
+  & {
+    width: $orbitSize;
+    height: $orbitSize;
+
+    &,
+    &::before,
+    &::after {
+      border-width: $orbitBorder;
+    }
+
+    &::before {
+      width: $orbitSizeBefore;
+      height: $orbitSizeBefore;
+    }
+
+    &::after {
+      width: $orbitSizeAfter;
+      height: $orbitSizeAfter;
+    }
+  }
+}
+
+@mixin skin( $size, $color ) {
+  $colorShadow: lighten($color, $lighten);
+  $colorBorder: darken($color, $darken);
+
+  $sizeShadow: $size * $ratioShadow;
+  $boxShadow: 0 0 $sizeShadow $sizeShadow * .25 $colorShadow inset;
+
+  &,
+  &::before,
+  &::after {
+    background-color: rgba($color, $ratioBackground);
+    border: $size * $ratioBorder solid $colorBorder;
+    box-shadow: $boxShadow;
+  }
+}
+
+@mixin cube( $size ) {
+  width: $size;
+  height: $size;
+}
+
+@mixin cubeFaces( $half ) {
+  &:first-child {
+    & {
+      transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, $half)
+    }
+
+    &::before {
+      transform: rotate3d(0, 1, 0, 90deg) translate3d($half, 0, $half)
+    }
+
+    &::after {
+      transform: rotate3d(0, 1, 0, -90deg) translate3d(-$half, 0, $half)
+    }
+  }
+
+  &:last-child {
+    & {
+      transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, $half)
+    }
+
+    &::before {
+      transform: rotate3d(1, 0, 0, 90deg) translate3d(0, -$half, $half)
+    }
+
+    &::after {
+      transform: rotate3d(1, 0, 0, -90deg) translate3d(0, $half, $half)
+    }
+  }
+}
+
+@mixin cubeAnimation( $timeAnimation, $transform ) {
+  animation-duration: $timeAnimation;
+
+  @keyframes rotation {
+    100% {
+      transform: rotate3d($transform, 360deg)
+    }
+  }
+}
+
+@mixin galaxyAnimation(
+  $duration: 20s,
+  $distance: 5vw,
+  $angle: 45deg,
+  $animated: true,
+  $reversed: false,
+) {
+  $direction: if($reversed, 1, -1);
+
+  $distance: $direction * $distance;
+  $angle: $direction * $angle;
+
+  @if $animated {
+    animation: galaxy infinite ease-in-out alternate $duration;
+
+    @keyframes galaxy {
+      0% {
+        transform: translate3d(0, $distance, 0) rotate3d(1, 1, 1, $angle)
+      }
+      100% {
+        transform: translate3d(0, -$distance, 0) rotate3d(1, 1, 1, -$angle)
+      }
+    }
+  } @else {
+    transform: translate3d(0, $distance, 0) rotate3d(1, 1, 0, $angle);
+  }
+}
+
+@mixin planets(
+  $planets,
+  $baseSize: 5vw,
+  $baseTimeOrbit: 20s,
+  $baseTimeRotation: 30s
+) {
+  $index: 1;
+
+  $prevDistance: 0;
+
+  @each $distance,
+  $ratioSize,
+  $ratioTimeOrbit,
+  $ratioTimeRotation,
+  $color,
+  $transform in $planets {
+    $size: $baseSize * $ratioSize;
+    $half: $size / 2;
+
+    $nextDistance: $prevDistance + $distance + $half;
+
+    $currentDistance: if($index == 1, 0, $nextDistance);
+
+    .box:nth-of-type( #{ $index } ) {
+      .planet {
+        @include position($currentDistance);
+        //transform: rotate3d(0, 1, 0, 360deg);
+
+        animation-duration: $ratioTimeOrbit * $baseTimeOrbit;
+
+        .cube {
+          @include cube($size);
+          @include cubeAnimation(
+                          $ratioTimeRotation * $baseTimeRotation,
+                          $transform
+          );
+        }
+
+        .face {
+          @include cubeFaces($half);
+          @include skin($size, $color);
+        }
+      }
+
+      .orbit {
+        @if $index > 1 {
+          @include orbit($size, $currentDistance);
+        }
+      }
+    }
+
+    $index: $index + 1;
+    $prevDistance: $currentDistance + $half;
+  }
+}
+
+.planet,
+.cube,
+.face {
+  @extend %center;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.cosmos {
+  @extend %center;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 34px);
+  overflow: hidden;
+  perspective: $perspective;
+}
+
+.title {
+  top: 30%;
+  z-index: 1;
+  position: absolute;
+  font-size: 60px;
+  text-align: center;
+}
+
+.description {
+  position: absolute;
+  top: 40%;
+  font-weight: 400;
+  width: 50%;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.galaxy {
+  @include planets($planets, $baseSize);
+  @include galaxyAnimation();
+  transform-style: preserve-3d;
+}
+
+.box {
+  @extend %center;
+  transform-style: preserve-3d;
+}
+
+.planet {
+  animation: orbit infinite linear;
+}
+
+.orbit {
+  @extend %center;
+  position: absolute;
+  transform: rotate3d(1, 0, 0, 90deg);
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--app-blue-3)
+}
+
+.cube {
+  animation: rotation infinite linear;
+}
+
+.face {
+  &,
+  &::before,
+  &::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    box-sizing: content-box;
+  }
+}
+
+@keyframes orbit {
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg)
+  }
+}

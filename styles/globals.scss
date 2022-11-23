@@ -1,19 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import "font";
 @import "fonts";
 
 :root {
-  --app-red-1: #ec0f46;
-  --app-red-2: #fc1410;
-  --app-red-3: #8e1400;
+  --app-red-1: #8e1400;
+  --app-red-2: #ec0f46;
+  --app-red-3: #fc1410;
   --app-purple-1: #808cff;
   --app-purple-2: #6300b4;
   --app-purple-3: #de39ff;
+  --app-purple-4: #9b64bc;
+  --app-purple-5: #815bc1;
   --app-blue-1: #1a1a3e;
   --app-blue-2: #0A1B26;
   --app-blue-3: #191F26;
   --app-gray-1: #1b1b1b;
   --app-white-1: #ffffff;
   --app-black-1: #000000;
+  --app-yellow-1: #ebcd60;;
+  --app-yellow-2: #ffef43;;
+  --app-orange-1: #cb4b33;
+  --app-green-1: #8fd764;
+  --app-green-2: #b9d053;
 }
 
 // Reset
@@ -21,11 +28,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "SF Pro", sans-serif;
 }
 
 body {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, var(--app-gray-1), var(--app-purple-2));
+  background-color: var(--app-gray-1);
 }
 
 // Reset
