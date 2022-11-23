@@ -248,13 +248,14 @@ $planets: (
 .description {
   font-size: 24px;
   font-weight: 400;
-  padding: 16px 32px;
+  padding: 2px 32px;
   line-height: 40px;
   text-align: center;
   position: relative;
   display: inline-block;
   color: var(--app-white-1);
   animation: 1s fadeInLeft ease-out;
+  clip-path: url(#clip);
 
   &:before {
     content: '';
