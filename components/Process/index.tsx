@@ -15,28 +15,28 @@ const Process = () => {
     const data = useMemo(() => {
         return [
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Analysis',
+                description: 'Our expert team learns about your business, success story and values'
             },
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Assessment',
+                description: 'Explore the fundamentals of your business and build model strategy based on your strength'
             },
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Ideation',
+                description: 'Take a closer look at what you are trying to achieve'
             },
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Planning',
+                description: 'Put in place an execution plan to follow in order to reach your business goals'
             },
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Execution',
+                description: 'Our diverse team of experts is able to execute the best solution for your business growth and development'
             },
             {
-                title: 'We help to transform your business',
-                description: 'Our experts will help your business'
+                title: 'Stick to it and crush it',
+                description: 'We outstaff a MOD (Manager of development) who will stick to you until we achieve our business goals'
             },
         ]
     }, [])
