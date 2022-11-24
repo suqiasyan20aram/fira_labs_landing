@@ -1,102 +1,61 @@
-@mixin dots($count) {
-  $text-shadow: ();
-  @for $i from 0 through $count {
-    $text-shadow: $text-shadow,
-    (-.5+(random()) * 6) + em (-.5+(random()) * 4) + em 6px hsla(random() * 360, 100%, 50%, .9);
-  }
-  text-shadow: $text-shadow;
+.background {
+  background-color: var(--app-yellow-2);
 }
 
-.wrapper {
-  background: #123;
+.sections {
+  display: flex;
   position: relative;
-  padding: 250px 24px;
   overflow: hidden;
 }
 
-.container {
-  background: #123;
-
-  &::after {
-    @include dots(40);
-    animation-duration: 43s;
-    animation-delay: -32s;
-  }
-
-  &::before {
-    @include dots(40);
-    animation-duration: 44s;
-    animation-delay: -27s;
-  }
-
-  &::after,
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    content: '.';
-    mix-blend-mode: screen;
-    font: 5vmin/1.3 Serif;
-    -webkit-text-fill-color: transparent;
-    animation: 56s -27s move infinite ease-in-out alternate;
-  }
+.section {
+  width: 100vw;
+  height: calc(100vh + 200px);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.containerInner {
-  &::before {
-    @include dots(40);
-    animation-duration: 42s;
-    animation-delay: -23s;
-  }
+.beforeSection {
+  background: var(--app-white-1);
+}
 
-  &::after {
-    @include dots(40);
-    animation-duration: 41s;
-    animation-delay: -19s;
-  }
-
-  &::after,
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    content: '.';
-    mix-blend-mode: screen;
-    font: 5vmin/1.3 Serif;
-    -webkit-text-fill-color: transparent;
-    animation: 62s -27s move infinite linear alternate;
-  }
+.container {
+  padding: 0 16px;
 }
 
 .title {
-  font-size: 60px;
+  font-size: 70px;
   text-align: center;
-  color: var(--app-blue-4);
+  color: var(--app-gray-1);
   margin-bottom: 16px;
   text-transform: capitalize;
-  text-shadow: 0 1px 5px rgba(0,0,0,1);
+  height: 90px;
 }
 
 .description {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 300;
   text-align: center;
-  color: var(--app-white-2);
+  color: var(--app-gray-1);
   max-width: 1000px;
-  line-height: 50px;
   margin: 0 auto;
-  text-shadow: 0 1px 5px rgba(0,0,0,1);
+  height: 210px
 }
 
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
+.afterSection {
+  background: var(--app-gray-1);
+
+  .container {
+    padding: 200px 16px;
   }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
+
+  .title {
+    color: var(--app-white-2);
+  }
+
+  .description {
+    color: var(--app-white-2);
   }
 }
