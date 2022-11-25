@@ -1,82 +1,83 @@
-import {useRef, useMemo, useEffect, useCallback} from 'react';
-import gsap from "gsap";
-import Particles from "react-tsparticles";
-import {loadFull} from "tsparticles";
-import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
-import type {Container, Engine} from "tsparticles-engine";
+import React, {useRef, useMemo, useState} from 'react';
 
 import styles from './index.module.scss'
+import classNames from "classnames";
 
-gsap.registerPlugin(ScrollTrigger);
-
+let timer: any = null;
 const Process = () => {
-    gsap.registerPlugin(ScrollTrigger);
+    const [activeId, setActiveId] = useState<number | null>(null)
+    const [style, setStyle] = useState<{ top: string, left: string }>({top: '0px', left: '0px'});
 
     const ref = useRef<HTMLDivElement>(null);
 
     const data = useMemo(() => {
         return [
             {
-                number: '01',
-                title: 'Analysis',
-                description: 'Our expert team learns about your business, success story and values'
+                id: 1,
+                title: 'Faster',
+                description: 'Be the first to tackle innovation and accelerate borderless solutions worldwide'
             },
             {
-                number: '02',
-                title: 'Assessment',
-                description: 'Explore the fundamentals of your business and build model strategy based on your strength'
+                id: 2,
+                title: 'Better',
+                description: 'Provide better products and services to your customers'
             },
             {
-                number: '03',
-                title: 'Ideation',
-                description: 'Take a closer look at what you are trying to achieve'
+                id: 3,
+                title: 'Cheaper',
+                description: 'Reduce costs and make your business more efficient due to cutting edge technology'
             },
         ]
     }, [])
 
-    useEffect(() => {
-        const element = ref.current;
-        if (element) {
-            let animation1 = gsap.fromTo(element.querySelector(`.${styles.row}:nth-child(1)`),
-                {
-                    left: '90%'
-                },
-                {
-                    left: 0,
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top center",
-                        end: "top+=400 center",
-                        scrub: 1,
-                    }
-                }
-            );
+    const onMouseMove = (event: React.MouseEvent<HTMLDivElement>, id: number) => {
+        clearTimeout(timer);
+        setActiveId(id);
+        setStyle({
+            top: (event.clientY - event.currentTarget.getBoundingClientRect().y) + "px",
+            left: (event.clientX - event.currentTarget.getBoundingClientRect().x) + "px",
+        })
+    }
 
-            let animation2 = gsap.fromTo(element.querySelector(`.${styles.row}:nth-child(2)`),
-                {
-                    left: '-90%'
-                },
-                {
-                    left: 0,
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top+=300 center",
-                        end: "top+=700 center",
-                        scrub: 1,
-                    }
-                }
-            );
-
-            return () => {
-                !!animation1 && animation1.kill();
-                !!animation2 && animation2.kill();
-            }
-        }
-    }, [])
+    const onMouseOut = () => {
+        setActiveId(null)
+    }
 
     return (
         <div ref={ref} className={styles.sections}>
-
+            <div>
+                <h1 className={styles.sectionTitle}>What you should expect</h1>
+                <p className={styles.sectionSubTitle}>As an outcome we expect to see your business perform and meet
+                    evolving market needs.</p>
+            </div>
+            <div className={styles.cards}>
+                {data.map(item => {
+                    return (
+                        <div key={item.id}
+                             className={classNames([styles.card, {[styles.active]: item.id === activeId}])}
+                             onMouseMove={(event: React.MouseEvent<HTMLDivElement>) => onMouseMove(event, item.id)}
+                             onMouseOut={onMouseOut}
+                        >
+                            <div className={styles.cardText}>
+                                <h2 className={styles.cardTitle}>{item.title}</h2>
+                                <p className={styles.cardDescription}>{item.description}</p>
+                            </div>
+                            <div
+                                style={
+                                    item.id === activeId ?
+                                        style :
+                                        {
+                                            top: '50%',
+                                            left: '50%',
+                                            transition: '0.4s all ease-in'
+                                        }
+                                }
+                                className={styles.cardShadow}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

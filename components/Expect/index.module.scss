@@ -1,4 +1,83 @@
 .sections {
   position: relative;
-  background-color: var(--app-gray-1);
+  padding: 100px 40px;
+  background-color: var(--app-white-2);
+}
+
+.sectionTitle {
+  font-size: 70px;
+  padding: 0 40px;
+  text-align: left;
+  color: var(--app-gray-1);
+  margin-bottom: 32px;
+}
+
+.sectionSubTitle {
+  width: 80%;
+  font-size: 24px;
+  padding: 0 40px;
+  text-align: left;
+  color: var(--app-gray-1);
+  margin-bottom: 90px;
+}
+
+.cards {
+  gap: 24px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  transition: .7s;
+  border-radius: 15px;
+  background: var(--app-gray-1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+}
+
+.cardText {
+  display: flex;
+  padding: 80px 24px;
+  flex-direction: column;
+
+  .cardTitle {
+    height: 70px;
+    font-size: 50px;
+    text-align: center;
+    color: var(--app-white-2);
+  }
+
+  .cardDescription {
+    font-size: 20px;
+    text-align: center;
+    color: var(--app-white-2);
+  }
+}
+
+.cardShadow {
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transition: opacity .7s;
+  opacity: 0;
+  z-index: -5;
+  filter: blur(10px);
+}
+
+.card.active {
+  .cardShadow {
+    opacity: 1;
+  }
 }

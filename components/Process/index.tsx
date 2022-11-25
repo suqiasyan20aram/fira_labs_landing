@@ -65,36 +65,6 @@ const Process = () => {
     useEffect(() => {
         const element = ref.current;
         if (element) {
-            // let animation1 = gsap.fromTo(element.querySelector(`.${styles.row}:nth-child(1)`),
-            //     {
-            //         top: 0
-            //     },
-            //     {
-            //         top: -400,
-            //         scrollTrigger: {
-            //             trigger: element,
-            //             start: "top top+=150",
-            //             end: "top+=400 top+=150",
-            //             scrub: 1,
-            //         }
-            //     }
-            // );
-            //
-            // let animation2 = gsap.fromTo(element.querySelector(`.${styles.row}:nth-child(2)`),
-            //     {
-            //         top: 0
-            //     },
-            //     {
-            //         top: -400,
-            //         scrollTrigger: {
-            //             trigger: element,
-            //             start: "top+=400 top+=150",
-            //             end: "top+=800 top+=150",
-            //             scrub: 1,
-            //         }
-            //     }
-            // );
-
             let animation1 = gsap.fromTo(element.querySelector(`.${styles.row}:nth-child(1)`),
                 {
                     left: '90%'
