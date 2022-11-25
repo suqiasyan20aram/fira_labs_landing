@@ -1,17 +1,15 @@
-import {useRef, useMemo, useEffect, useState, useCallback} from 'react';
+import {useRef, useMemo, useEffect, useCallback} from 'react';
 import gsap from "gsap";
+import Particles from "react-tsparticles";
+import {loadFull} from "tsparticles";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+import {Container, Engine} from "tsparticles-engine";
 
 import styles from './index.module.scss'
-import classNames from "classnames";
-import Particles from "react-tsparticles";
-import {Container, Engine} from "tsparticles-engine";
-import {loadFull} from "tsparticles";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
-    const [balloon, setBalloon] = useState<number[]>([])
     gsap.registerPlugin(ScrollTrigger);
 
     const ref = useRef<HTMLDivElement>(null);
@@ -56,12 +54,7 @@ const Process = () => {
         ]
     }, [])
 
-    const popBalloon = (number: number) => {
-        setBalloon(prev => [...prev, number])
-    }
-
     const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine);
         await loadFull(engine);
     }, []);
 
@@ -147,17 +140,8 @@ const Process = () => {
                     and
                     closer to evolving customer needs.</p>
             </div>
-            {/*<div className={styles.clouds}>*/}
-            {/*    <div className={styles.cloud}></div>*/}
-            {/*    <div className={styles.cloud}></div>*/}
-            {/*    <div className={styles.cloud}></div>*/}
-            {/*</div>*/}
             <div className={styles.section}>
-                <div className={classNames([styles.row, {[styles.popped]: balloon.includes(1)}])}>
-                    {/*<div className={styles.balloon}*/}
-                    {/*     onClick={() => popBalloon(1)}>*/}
-                    {/*    <div className={styles.rope}></div>*/}
-                    {/*</div>*/}
+                <div className={styles.row}>
                     <div className={styles.rowInner}>
                         {dataFirst.map((item, index) => {
                             return (
@@ -172,11 +156,7 @@ const Process = () => {
                     </div>
                 </div>
 
-                <div className={classNames([styles.row, {[styles.popped]: balloon.includes(2)}])}>
-                    {/*<div className={styles.balloon}*/}
-                    {/*     onClick={() => popBalloon(2)}>*/}
-                    {/*    <div className={styles.rope}></div>*/}
-                    {/*</div>*/}
+                <div className={styles.row}>
                     <div className={styles.rowInner}>
                         {dataSecond.map((item, index) => {
                             return (
@@ -193,7 +173,7 @@ const Process = () => {
 
             </div>
             <Particles
-                id="tsparticles"
+                id="process-particles"
                 init={particlesInit}
                 loaded={particlesLoaded}
                 style={{position: 'absolute'}}
