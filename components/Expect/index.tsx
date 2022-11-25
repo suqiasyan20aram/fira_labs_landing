@@ -1,9 +1,11 @@
-import {useRef, useMemo, useEffect, useState} from 'react';
+import {useRef, useMemo, useEffect, useCallback} from 'react';
 import gsap from "gsap";
+import Particles from "react-tsparticles";
+import {loadFull} from "tsparticles";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+import type {Container, Engine} from "tsparticles-engine";
 
 import styles from './index.module.scss'
-import classNames from "classnames";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +76,7 @@ const Process = () => {
 
     return (
         <div ref={ref} className={styles.sections}>
-          Expect
+
         </div>
     )
 }

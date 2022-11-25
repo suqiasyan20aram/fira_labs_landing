@@ -1,9 +1,12 @@
-import {useRef, useMemo, useEffect, useState} from 'react';
+import {useRef, useMemo, useEffect, useState, useCallback} from 'react';
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import styles from './index.module.scss'
 import classNames from "classnames";
+import Particles from "react-tsparticles";
+import {Container, Engine} from "tsparticles-engine";
+import {loadFull} from "tsparticles";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +59,15 @@ const Process = () => {
     const popBalloon = (number: number) => {
         setBalloon(prev => [...prev, number])
     }
+
+    const particlesInit = useCallback(async (engine: Engine) => {
+        console.log(engine);
+        await loadFull(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async (container: Container | undefined) => {
+        await console.log(container);
+    }, []);
 
     useEffect(() => {
         const element = ref.current;
@@ -180,6 +192,87 @@ const Process = () => {
                 </div>
 
             </div>
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                style={{position: 'absolute'}}
+                options={{
+                    style: {
+                        position: 'absolute'
+                    },
+                    background: {
+                        color: {
+                            value: "red",
+                        },
+                    },
+                    fpsLimit: 120,
+                    interactivity: {
+                        events: {
+                            onClick: {
+                                enable: true,
+                                mode: "push",
+                            },
+                            onHover: {
+                                enable: true,
+                                mode: "repulse",
+                            },
+                            resize: true,
+                        },
+                        modes: {
+                            push: {
+                                quantity: 4,
+                            },
+                            repulse: {
+                                distance: 200,
+                                duration: 0.4,
+                            },
+                        },
+                    },
+                    particles: {
+                        color: {
+                            value: "#6300b4",
+                        },
+                        links: {
+                            color: "#de39ff",
+                            distance: 150,
+                            enable: true,
+                            opacity: 0.5,
+                            width: 1,
+                        },
+                        collisions: {
+                            enable: true,
+                        },
+                        move: {
+                            direction: "none",
+                            enable: true,
+                            outModes: {
+                                default: "bounce",
+                            },
+                            random: false,
+                            speed: 2,
+                            straight: true,
+                        },
+                        number: {
+                            density: {
+                                enable: true,
+                                area: 800,
+                            },
+                            value: 100,
+                        },
+                        opacity: {
+                            value: 0.5,
+                        },
+                        shape: {
+                            type: "circle",
+                        },
+                        size: {
+                            value: {min: 1, max: 5},
+                        },
+                    },
+                    detectRetina: true,
+                }}
+            />
         </div>
     )
 }
