@@ -13,31 +13,27 @@ const Help = () => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-            const element = ref.current;
-            if (element) {
-                let animation = gsap.fromTo(element.querySelectorAll(`.${styles.section}`),
-                    {x: '0%'},
-                    {
-                        x: '-100%',
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top top-=100",
-                            end: "bottom top-=100",
-                            scrub: 1,
-                            pin: true,
-                        }
+        const element = ref.current;
+        if (element) {
+            let animation = gsap.fromTo(element.querySelectorAll(`.${styles.section}`),
+                {x: '0%'},
+                {
+                    x: '-100%',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top top-=100",
+                        end: "bottom top-=100",
+                        scrub: 1,
+                        pin: true,
                     }
-                );
-
-                return () => {
-                    !!animation && animation.kill();
                 }
+            );
+
+            return () => {
+                !!animation && animation.kill();
             }
         }
-        ,
-        []
-    )
-    ;
+    }, []);
 
 
     return (
