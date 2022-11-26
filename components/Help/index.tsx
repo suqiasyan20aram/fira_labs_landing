@@ -8,8 +8,6 @@ import styles from './index.module.scss'
 gsap.registerPlugin(ScrollTrigger);
 
 const Help = () => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -34,7 +32,6 @@ const Help = () => {
             }
         }
     }, []);
-
 
     return (
         <div className={styles.background}>

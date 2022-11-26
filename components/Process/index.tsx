@@ -10,8 +10,6 @@ import styles from './index.module.scss'
 gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ref = useRef<HTMLDivElement>(null);
 
     const dataFirst = useMemo(() => {
