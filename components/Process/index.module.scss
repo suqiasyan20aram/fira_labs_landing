@@ -32,7 +32,7 @@
 }
 
 .row {
-  --card-color-wirdth: 15px;
+  --card-color-wirdth: 5px;
 
   width: 100%;
   z-index: 1;
@@ -45,11 +45,11 @@
     padding: var(--card-color-wirdth) 0 var(--card-color-wirdth) var(--card-color-wirdth);
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
-    background-image: linear-gradient(to right, var(--app-purple-3), var(--app-gray-1));
+    background-image: linear-gradient(to right, var(--app-green-3), var(--app-gray-1));
 
     .rowInner {
-      border-top-left-radius: 86px;
-      border-bottom-left-radius: 86px;
+      border-top-left-radius: 94px;
+      border-bottom-left-radius: 94px;
     }
   }
 
@@ -58,12 +58,12 @@
     padding: var(--card-color-wirdth) var(--card-color-wirdth) var(--card-color-wirdth) 0;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
-    background-image: linear-gradient(to right, var(--app-gray-1), var(--app-purple-3));
+    background-image: linear-gradient(to right, var(--app-gray-1), var(--app-green-3));
     animation-delay: -1.5s;
 
     .rowInner {
-      border-top-right-radius: 86px;
-      border-bottom-right-radius: 86px;
+      border-top-right-radius: 94px;
+      border-bottom-right-radius: 94px;
     }
   }
 }

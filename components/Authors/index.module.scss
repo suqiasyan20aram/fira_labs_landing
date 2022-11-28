@@ -1,0 +1,90 @@
+.sections {
+  z-index: 5;
+  overflow: hidden;
+  position: relative;
+  padding: 100px 40px;
+  background-color: var(--app-gray-1);
+}
+
+.sectionSubTitle {
+  font-size: 24px;
+  padding: 0 40px;
+  text-align: left;
+  color: var(--app-white-2);
+  margin-bottom: 90px;
+}
+
+.cards {
+  gap: 24px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  animation: glitch 1.3s ease infinite 2s alternate-reverse;
+
+  &:nth-child(1) {
+    animation-delay: -1.2s;
+    animation-duration: 1s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 0.8s;
+  }
+
+  .cardTitle {
+    animation-delay: -1.8s;
+    animation-duration: 1.4s;
+  }
+}
+
+.cardText {
+  display: flex;
+  padding: 80px 24px;
+  flex-direction: column;
+
+
+  .cardTitle {
+    font-size: 60px;
+    text-align: center;
+    color: var(--app-white-2);
+  }
+
+  .cardDescription {
+    font-size: 20px;
+    text-align: center;
+    color: var(--app-white-1);
+  }
+}
+
+.glitch{
+  animation: glitch 2s ease infinite 2s alternate-reverse;
+
+  &:nth-child(1n){
+    animation-delay: -1s;
+  }
+  &:nth-child(2n){
+    animation-delay: -2s;
+  }
+  &:nth-child(3n){
+    animation-delay: -3s;
+  }
+}
+
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(8px);
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {
+    text-shadow: none;
+    transform: none;
+  }
+}

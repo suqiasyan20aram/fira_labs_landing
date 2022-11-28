@@ -57,7 +57,7 @@ const Process = () => {
     }, []);
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
+        await container;
     }, []);
 
     useEffect(() => {
@@ -149,18 +149,9 @@ const Process = () => {
                     style: {
                         position: 'absolute'
                     },
-                    background: {
-                        color: {
-                            value: "red",
-                        },
-                    },
                     fpsLimit: 120,
                     interactivity: {
                         events: {
-                            onClick: {
-                                enable: true,
-                                mode: "push",
-                            },
                             onHover: {
                                 enable: true,
                                 mode: "repulse",
@@ -179,17 +170,10 @@ const Process = () => {
                     },
                     particles: {
                         color: {
-                            value: "#6300b4",
+                            value: "#767676",
                         },
                         links: {
-                            color: "#de39ff",
-                            distance: 150,
-                            enable: true,
-                            opacity: 0.5,
-                            width: 1,
-                        },
-                        collisions: {
-                            enable: true,
+                            enable: false,
                         },
                         move: {
                             direction: "none",
@@ -198,7 +182,7 @@ const Process = () => {
                                 default: "bounce",
                             },
                             random: false,
-                            speed: 2,
+                            speed: 0.5,
                             straight: true,
                         },
                         number: {
