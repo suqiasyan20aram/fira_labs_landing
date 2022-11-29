@@ -1,0 +1,41 @@
+.lines {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--app-gray-1);
+}
+
+.line {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 100px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  overflow: hidden;
+
+  .word {
+    white-space: nowrap;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin: 0 50px;
+  }
+
+  &:nth-child(1) {
+    width: 200%;
+    transform-origin: left;
+    transform: rotate(6deg) translateX(-50px);
+    background-color: var(--app-white-2);
+  }
+
+  &:nth-child(2) {
+    width: 200%;
+    transform: rotate(-4deg) translateX(-50px);
+    background-color: var(--app-yellow-2);
+  }
+}

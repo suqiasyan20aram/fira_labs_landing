@@ -9,6 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Process = () => {
     const ref = useRef<HTMLDivElement>(null);
 
+    const text = useMemo(() => {
+        const txt = 'We are running blockchain business for over 4 years. We set up IEOs, participated in NFT projects companies and collaborated with blockchain businesses & DeFi companies to build sustainable business models and grow community. We ran business development for most advanced anti-scam software, build a solution for biggest Swiss-based crypto broker, co-founded most popular marketing platform for crypto airdrops, and developed an advanced non-custodial multi-chain crypto wallet widely used in MENA region.'
+        return txt.split(' ').map((word, index) => {
+            return <span key={index} className={styles.glitch}>{word} </span>
+        })
+    }, [])
+
     const data = useMemo(() => {
         return [
             {
@@ -66,12 +73,14 @@ const Process = () => {
                 }
             );
 
+
             return () => {
                 !!animation1 && animation1.kill();
                 !!animation2 && animation2.kill();
             }
         }
     }, []);
+
 
     return (
         <div ref={ref}
@@ -93,25 +102,7 @@ const Process = () => {
             </div>
 
             <p className={styles.sectionSubTitle}>
-                We are <span className={styles.glitch}>running</span> blockchain business for over 4 <span
-                className={styles.glitch}>
-                years
-            </span>. We set up
-                IEOs, <span
-                className={styles.glitch}>participated</span> in NFT projects
-                companies and collaborated with blockchain businesses & DeFi companies to build sustainable <span
-                className={styles.glitch}>
-                business
-            </span>
-                models and grow <span className={styles.glitch}>community</span>. We ran business <span
-                className={styles.glitch}>development</span> for most advanced anti-scam software, build a
-                <span className={styles.glitch}>
-                    solution
-                </span> for biggest Swiss-based crypto broker, co-founded most popular <span
-                className={styles.glitch}>marketing</span> platform for crypto
-                airdrops, and developed an advanced non-custodial multi-chain crypto <span
-                className={styles.glitch}>wallet</span> widely used in MENA
-                region.
+                {text}
             </p>
         </div>
     )

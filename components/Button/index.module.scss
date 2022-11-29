@@ -1,0 +1,61 @@
+.button {
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  border: 2px solid transparent;
+  font-family: "Inter", sans-serif;
+  padding: 22px 50px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  transition: 0.3s color ease, 0.3s border-color ease, 0.3s background-color ease, 0.3s padding-right ease;
+
+  .text {
+    white-space: nowrap;
+    transition: 0.3s transform ease;
+  }
+
+  .arrow {
+    right: 0;
+    top: 50%;
+    opacity: 0;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: 0.3s opacity ease, 0.3s transform ease;
+  }
+
+  &:hover {
+    padding-right: 70px;
+
+    .text {
+      transform: translateX(-20px);
+    }
+
+    .arrow {
+      opacity: 1;
+      transform: translateY(-50%) translateX(-35px);
+    }
+  }
+}
+
+.primary {
+  color: var(--app-white-2);
+  border-color: var(--app-black-1);
+  background-color: var(--app-black-1);
+}
+
+.primary-outline {
+  color: var(--app-black-1);
+  border-color: var(--app-black-1);
+  background-color: transparent;
+
+  &:hover {
+    color: var(--app-white-2);
+    background-color: var(--app-black-1);
+  }
+}

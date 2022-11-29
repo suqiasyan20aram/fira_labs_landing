@@ -84,12 +84,12 @@ const Process = () => {
                     bottom: 200,
                 },
                 {
-                    top: -100,
-                    bottom: -100,
+                    top: -200,
+                    bottom: -200,
                     scrollTrigger: {
                         trigger: element,
-                        start: "top center",
-                        end: "bottom bottom",
+                        start: "top bottom",
+                        end: "bottom top",
                         scrub: 2,
                     }
                 }

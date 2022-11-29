@@ -1,4 +1,13 @@
 .heroWrapper {
   height: 90vh;
+  position: relative;
   background-color: var(--app-yellow-2);
+}
+
+.actions {
+  gap: 16px;
+  left: 100px;
+  bottom: 100px;
+  display: flex;
+  position: absolute;
 }
