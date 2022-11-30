@@ -1,12 +1,15 @@
-import React, {useRef, useMemo, useEffect} from 'react';
+import React, {useRef, useMemo, useEffect, useState} from 'react';
 import gsap from "gsap";
+import Image from "next/image";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import styles from './index.module.scss'
+import authorsImage from '../../assets/images/authors.jpeg'
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Process = () => {
+const Authors = () => {
+    const [style, setStyle] = useState({x: 0, y: 0, translateX: -180})
     const ref = useRef<HTMLDivElement>(null);
 
     const text = useMemo(() => {
@@ -35,6 +38,24 @@ const Process = () => {
             },
         ]
     }, [])
+
+    function onMouseMove(e: any) {
+        const fromCenterY = (85 * window.innerHeight / 200) - (e.clientY - e.currentTarget.getBoundingClientRect().top);
+        const fromCenterX = (70 * window.innerHeight / 200) - (e.clientX - e.currentTarget.getBoundingClientRect().left);
+        setStyle({
+            x: fromCenterX,
+            y: fromCenterY,
+            translateX: 0
+        })
+    }
+
+    const onMouseOut = () => {
+        setStyle({
+            x: 0,
+            y: 0,
+            translateX: -180
+        })
+    }
 
     useEffect(() => {
         const element = ref.current;
@@ -86,19 +107,31 @@ const Process = () => {
         <div ref={ref}
              className={styles.sections}
         >
-            <div className={styles.cards}>
-                {data.map(item => {
-                    return (
-                        <div key={item.id}
-                             className={styles.card}
-                        >
-                            <div className={styles.cardText}>
-                                <h2 className={styles.cardTitle}>{item.title}</h2>
-                                <p className={styles.cardDescription}>{item.profession}</p>
+            <div className={styles.sectionsInner}>
+                <div
+                    className={styles.imageBox}
+                    onMouseMove={onMouseMove}
+                    onMouseOut={onMouseOut}
+                    style={{
+                        transform: `translateX(${style.translateX}px) perspective(800px) rotateX(${style.y / 80}deg)  rotateY(${-style.x / 80}deg)`
+                    }}
+                >
+                    <Image src={authorsImage} alt={'image'}/>
+                </div>
+                <div className={styles.cards}>
+                    {data.map(item => {
+                        return (
+                            <div key={item.id}
+                                 className={styles.card}
+                            >
+                                <div className={styles.cardText}>
+                                    <h2 className={styles.cardTitle}>{item.title}</h2>
+                                    <p className={styles.cardDescription}>{item.profession}</p>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
 
             <p className={styles.sectionSubTitle}>
@@ -108,4 +141,4 @@ const Process = () => {
     )
 }
 
-export default Process;
+export default Authors;

@@ -7,7 +7,8 @@ import firaLogo from '../../assets/images/logo.svg'
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
-const Process = () => {
+
+const Line = () => {
     const ref = useRef<HTMLDivElement>(null);
     const timer = useRef<any>(0);
     const animation1 = useRef<any>(null);
@@ -89,22 +90,22 @@ const Process = () => {
              className={styles.lines}
         >
             <div className={styles.line}>
-                {words.map(word => {
+                {words.map((word, index) => {
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <span className={styles.word}>{word}</span>
                             <Image src={firaLogo} alt={'logo'} className={styles.logo}/>
-                        </>
+                        </React.Fragment>
                     )
                 })}
             </div>
             <div className={styles.line}>
-                {words.map(word => {
+                {words.map((word, index) => {
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <span className={styles.word}>{word}</span>
                             <Image src={firaLogo} alt={'logo'} className={styles.logo}/>
-                        </>
+                        </React.Fragment>
                     )
                 })}
             </div>
@@ -112,4 +113,4 @@ const Process = () => {
     )
 }
 
-export default Process;
+export default Line;

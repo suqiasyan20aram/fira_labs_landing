@@ -11,7 +11,7 @@ import {getRandomInteger} from "../../utils/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Process = () => {
+const Expect = () => {
     const [style, setStyle] = useState<{ top: string, left: string }>({top: '0px', left: '0px'});
 
     const ref = useRef<HTMLDivElement>(null);
@@ -112,7 +112,7 @@ const Process = () => {
                 <p className={styles.sectionSubTitle}>As an outcome we expect to see your business perform and meet
                     evolving market needs.
                 </p>
-                <div className={styles.line} />
+                <div className={styles.line}/>
             </div>
             <div className={styles.cards}>
                 {data.map(item => {
@@ -150,4 +150,4 @@ const Process = () => {
     )
 }
 
-export default Process;
+export default Expect;

@@ -113,7 +113,7 @@ const Process = () => {
                     <div className={styles.rowInner}>
                         {dataFirst.map((item, index) => {
                             return (
-                                <div key={index}
+                                <div key={item.number}
                                      className={styles.item}>
                                     <p className={styles.number}>{item.number}.</p>
                                     <h2 className={styles.title}>{item.title}</h2>
@@ -128,7 +128,7 @@ const Process = () => {
                     <div className={styles.rowInner}>
                         {dataSecond.map((item, index) => {
                             return (
-                                <div key={index}
+                                <div key={item.number}
                                      className={styles.item}>
                                     <p className={styles.number}>{item.number}.</p>
                                     <h2 className={styles.title}>{item.title}</h2>
