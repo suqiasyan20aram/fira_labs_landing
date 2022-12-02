@@ -1,8 +1,10 @@
 import React from 'react';
-import classNames from 'classnames';
-import styles from './index.module.scss';
-import arrowIcon from '../../assets/images/logo.svg';
 import Image from "next/image";
+import classNames from 'classnames';
+
+import styles from './index.module.scss';
+import arrowIcon from '../../assets/images/arrowRight.svg';
+
 
 export type AppButtonSize = 'small' | 'default';
 export type AppButtonType = 'button' | 'submit' | 'reset';

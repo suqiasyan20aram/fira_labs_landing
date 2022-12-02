@@ -116,8 +116,10 @@ const Process = () => {
                                 <div key={item.number}
                                      className={styles.item}>
                                     <p className={styles.number}>{item.number}.</p>
-                                    <h2 className={styles.title}>{item.title}</h2>
-                                    <p className={styles.description}>{item.description}</p>
+                                    <div>
+                                        <h2 className={styles.title}>{item.title}</h2>
+                                        <p className={styles.description}>{item.description}</p>
+                                    </div>
                                 </div>
                             )
                         })}
@@ -131,8 +133,10 @@ const Process = () => {
                                 <div key={item.number}
                                      className={styles.item}>
                                     <p className={styles.number}>{item.number}.</p>
-                                    <h2 className={styles.title}>{item.title}</h2>
-                                    <p className={styles.description}>{item.description}</p>
+                                    <div>
+                                        <h2 className={styles.title}>{item.title}</h2>
+                                        <p className={styles.description}>{item.description}</p>
+                                    </div>
                                 </div>
                             )
                         })}

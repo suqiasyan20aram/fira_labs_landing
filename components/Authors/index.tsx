@@ -50,20 +50,15 @@ const Authors = () => {
         ]
     }, [])
 
-    function onMouseMove(e: any) {
-        const fromCenterY = (85 * window.innerHeight / 200) - (e.clientY - e.currentTarget.getBoundingClientRect().top);
-        const fromCenterX = (70 * window.innerHeight / 200) - (e.clientX - e.currentTarget.getBoundingClientRect().left);
-        setStyle({
-            x: fromCenterX,
-            y: fromCenterY,
-        })
+    const onMouseMove = (e: any) => {
+        const {top, left} = e.currentTarget.getBoundingClientRect();
+        const fromCenterY = (85 * window.innerHeight / 200) - (e.clientY - top);
+        const fromCenterX = (70 * window.innerHeight / 200) - (e.clientX - left);
+        setStyle({x: fromCenterX, y: fromCenterY})
     }
 
     const onMouseOut = () => {
-        setStyle({
-            x: 0,
-            y: 0,
-        })
+        setStyle({x: 0, y: 0})
     }
 
 

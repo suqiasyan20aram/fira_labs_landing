@@ -12,9 +12,9 @@ import {getRandomInteger} from "../../utils/constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const Expect = () => {
-    const [style, setStyle] = useState<{ top: string, left: string }>({top: '0px', left: '0px'});
-
     const ref = useRef<HTMLDivElement>(null);
+
+    const [style, setStyle] = useState<{ top: string, left: string }>({top: '0px', left: '0px'});
 
     const figures = useMemo(() => {
         return ['cycle', 'square', 'cycle', 'square', 'triangle', 'cycle', 'triangle', 'square', 'triangle', 'cycle', 'triangle', 'square'].map((figure) => {

@@ -1,4 +1,5 @@
 .sections {
+  padding: 24px 0;
   overflow: hidden;
   position: relative;
   background-color: var(--app-gray-1);
@@ -6,7 +7,7 @@
 
 .sectionTitle {
   font-size: 70px;
-  padding: 0 40px;
+  padding: 0 80px;
   text-align: left;
   color: var(--app-white-2);
   margin-bottom: 32px;
@@ -15,7 +16,7 @@
 .sectionSubTitle {
   width: 80%;
   font-size: 24px;
-  padding: 0 40px;
+  padding: 0 80px;
   text-align: left;
   color: var(--app-white-2);
   margin-bottom: 90px;
@@ -60,6 +61,7 @@
     border-bottom-right-radius: 4px;
     background-image: linear-gradient(to right, var(--app-gray-1), var(--app-green-3));
     animation-delay: -1.5s;
+    margin-bottom: 0;
 
     .rowInner {
       border-top-right-radius: 2px;
@@ -86,7 +88,7 @@
   border-right: 1px solid var(--app-white-2);
 
   &:last-child {
-    border: none
+    border-right: none
   }
 }
 
@@ -126,5 +128,89 @@
   }
   100% {
     transform: translatey(0px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sectionTitle {
+    font-size: 60px;
+  }
+
+  .sectionSubTitle {
+    width: 100%;
+  }
+
+  .rowInner {
+    gap: 24px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+    display: flex;
+    border-right: none;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--app-white-2);
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .number {
+    margin-bottom: 0;
+  }
+
+  .title {
+    text-align: left;
+    margin-left: 24px;
+  }
+
+  .description {
+    text-align: left;
+    margin-left: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 40px;
+    padding: 0 24px;
+  }
+
+  .sectionSubTitle {
+    padding: 0 24px;
+  }
+
+  .row {
+    &:first-child {
+      margin-left: 24px;
+    }
+
+    &:last-child {
+      margin-right: 24px;
+    }
+  }
+
+  .rowInner {
+    padding: 40px;
+  }
+
+  .number {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .number {
+    font-size: 30px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 8px;
   }
 }

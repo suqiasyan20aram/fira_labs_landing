@@ -1,0 +1,153 @@
+.sections {
+  position: relative;
+  padding: 100px 40px;
+  perspective: 200px;
+  overflow: hidden;
+  background-color: var(--app-white-1);
+}
+
+.sectionTitle {
+  font-size: 70px;
+  padding: 0 40px;
+  display: inline-block;
+  color: var(--app-gray-1);
+  margin-bottom: 32px;
+
+  .highlight {
+    color: var(--app-red-2);
+  }
+}
+
+.mainBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  gap: 32px;
+  padding: 24px;
+  max-width: 600px;
+  display: flex;
+  margin-left: auto;
+  border-radius: 4px;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+  transform-origin: right bottom;
+  transition: 0.2s transform ease-out;
+  background-color: rgba(213, 213, 213, 0.4);
+  box-shadow: 0 15px 38px rgba(0, 0, 0, 0.22);
+
+  .cardText {
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--app-black-1);
+  }
+}
+
+.avatarWrapper {
+  position: relative;
+  transition: 0.2s transform ease-out;
+
+  .avatar {
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+  }
+
+  &:before {
+    content: "";
+    top: 0;
+    width: 330px;
+    height: 300px;
+    left: -110px;
+    position: absolute;
+    background-color: var(--app-yellow-2);
+  }
+}
+
+.letters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -4;
+  pointer-events: none;
+
+  > * {
+    text-transform: uppercase;
+    animation: float 30s ease-in-out infinite;
+  }
+}
+
+//.border {
+//  stroke: var(--app-red-2);
+//  animation: rotate 10s linear infinite;
+//  transform-origin: center;
+//  transform-box: fill-box;
+//}
+//
+//.circle path:nth-child(odd) {
+//  animation: circles 1s ease-in-out infinite alternate;
+//}
+//
+//.circle path:nth-child(even) {
+//  animation: circles2 1.5s ease-in-out infinite alternate;
+//}
+//
+//@keyframes rotate {
+//  0% {
+//    transform: rotateZ(0deg);
+//  }
+//  25% {
+//    transform: rotateZ(90deg);
+//  }
+//  50% {
+//    transform: rotateZ(180deg);
+//  }
+//  75% {
+//    transform: rotateZ(270deg);
+//  }
+//  100% {
+//    transform: rotateZ(360deg);
+//  }
+//}
+//
+//@keyframes circles {
+//  from {
+//    transform: translateY(0)
+//  }
+//  to {
+//    transform: translateY(10px);
+//  }
+//}
+//
+//@keyframes circles2 {
+//  from {
+//    transform: translateY(0)
+//  }
+//  to {
+//    transform: translateY(15px);
+//  }
+//}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-40px) translateX(10px) rotateZ(15deg);
+  }
+  50% {
+    transform: translateY(10px) translateX(40px) rotateZ(-40deg);
+  }
+  70% {
+    transform: translateY(-120px) translateX(-12px) rotateZ(8deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0) rotateZ(0deg);
+  }
+}
+

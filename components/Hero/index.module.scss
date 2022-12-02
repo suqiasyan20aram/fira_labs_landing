@@ -1,13 +1,23 @@
 .heroWrapper {
-  height: 90vh;
+  width: 100vw;
+  height: 80vh;
+  padding: 16px;
   position: relative;
   background-color: var(--app-yellow-2);
 }
 
 .actions {
   gap: 16px;
-  left: 100px;
-  bottom: 100px;
+  width: 100%;
   display: flex;
-  position: absolute;
+  flex-wrap: wrap;
+  transform: translateY(-100px);
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    transform: translateY(-160px);
+  }
 }

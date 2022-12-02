@@ -22,7 +22,7 @@ const Help = () => {
                         start: "top top-=100",
                         end: "bottom top-=100",
                         scrub: 1,
-                        pin: true,
+                        pin: element,
                     }
                 }
             );
