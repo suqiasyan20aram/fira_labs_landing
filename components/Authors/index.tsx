@@ -10,7 +10,9 @@ import narekNFT from '../../assets/images/narekNFT.jpeg'
 import narekPicture from '../../assets/images/narekPicture.jpeg'
 import robNFT from '../../assets/images/robNFT.jpeg'
 import robPicture from '../../assets/images/robPicture.jpeg'
-import authorsImage from '../../assets/images/authors.jpeg'
+import twitterIcon from '../../assets/images/twitter.svg'
+import linkedinIcon from '../../assets/images/linkedin.svg'
+import githubIcon from '../../assets/images/github.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +34,10 @@ const Authors = () => {
                 profession: 'Product, Operations',
                 nft: robNFT,
                 picture: robPicture,
+                social: [
+                    {id: 1, label: "Twitter", url: '', icon: twitterIcon},
+                    {id: 2, label: "Linkedin", url: '', icon: linkedinIcon},
+                ]
             },
             {
                 id: 2,
@@ -39,6 +45,10 @@ const Authors = () => {
                 profession: 'Exo',
                 nft: narekNFT,
                 picture: narekPicture,
+                social: [
+                    {id: 1, label: "Github", url: '', icon: githubIcon},
+                    {id: 2, label: "Linkedin", url: '', icon: linkedinIcon},
+                ]
             },
             {
                 id: 3,
@@ -46,6 +56,15 @@ const Authors = () => {
                 profession: 'Cit',
                 nft: aramNFT,
                 picture: aramPicture,
+                social: [
+                    {id: 1, label: "Github", url: 'https://github.com/aramsuqiasyan', icon: githubIcon},
+                    {
+                        id: 2,
+                        label: "Linkedin",
+                        url: 'https://www.linkedin.com/in/aram-suqiasyan-476305180/',
+                        icon: linkedinIcon
+                    },
+                ]
             },
         ]
     }, [])
@@ -73,7 +92,7 @@ const Authors = () => {
                         transform: `perspective(800px) rotateX(${style.y / 80}deg)  rotateY(${-style.x / 80}deg)`
                     }}
                 >
-                    <Image src={authorsImage} alt={'image'}/>
+                    <video src={require('../../assets/videos/authors.webm')} autoPlay={true} muted={true} loop={true}/>
                 </div>
                 <div className={styles.mainBox}>
                     <div className={styles.cards}>
@@ -94,6 +113,15 @@ const Authors = () => {
                                         </div>
                                         <h2 className={styles.cardTitle}>{item.title}</h2>
                                         <p className={styles.cardDescription}>{item.profession}</p>
+                                        <div className={styles.cardSocials}>
+                                            {item.social.map((social) => {
+                                                return (
+                                                    <a key={social.id} href={social.url} className={styles.cardSocial}>
+                                                        <Image src={social.icon} alt={'social'}/>
+                                                    </a>
+                                                )
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                             )
