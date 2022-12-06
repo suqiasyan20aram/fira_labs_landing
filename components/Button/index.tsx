@@ -8,7 +8,7 @@ import arrowIcon from '../../assets/images/arrowRight.svg';
 
 export type AppButtonSize = 'small' | 'default';
 export type AppButtonType = 'button' | 'submit' | 'reset';
-export type AppButtonVariant = 'primary' | 'primary-outline';
+export type AppButtonVariant = 'primary' | 'primary-outline' | 'red' | 'red-outline';
 
 type ButtonProps = {
     id?: string;

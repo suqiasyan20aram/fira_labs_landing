@@ -1,0 +1,68 @@
+.sectionWrapper {
+  position: relative;
+  padding: 100px 5rem;
+  background-color: var(--app-black-2);
+
+  .sectionTitle {
+    display: inline-block;
+    color: var(--app-white-1);
+    background-image: linear-gradient(to bottom, transparent 50%, var(--app-yellow-2));
+    margin-bottom: 48px;
+  }
+
+  .section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .left {
+      top: 80px;
+      position: sticky;
+      margin-right: 160px;
+
+      .leftTitle {
+        width: 100%;
+        line-height: 1;
+        font-weight: 500;
+        font-size: 7.25vw;
+        letter-spacing: -0.075vw;
+        color: rgba(231, 233, 234, 0.2);
+        margin-bottom: 24px;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+
+      .services {
+
+        .service {
+          padding: 4rem 0;
+          border-bottom: 1px solid var(--app-black-3);
+
+          .serviceTitle {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--app-white-1);
+          }
+
+          .serviceDescription {
+            color: var(--app-gray-3);
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+          }
+
+          .serviceButton {
+            color: var(--app-white-1);
+            font-size: 20px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+

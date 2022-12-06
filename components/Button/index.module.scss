@@ -59,3 +59,20 @@
     background-color: var(--app-black-1);
   }
 }
+
+.red {
+  color: var(--app-white-2);
+  border-color: var(--app-red-1);
+  background-color: var(--app-red-1);
+}
+
+.red-outline {
+  color: var(--app-red-1);
+  border-color: var(--app-red-1);
+  background-color: transparent;
+
+  &:hover {
+    color: var(--app-white-2);
+    background-color: var(--app-red-1);
+  }
+}
