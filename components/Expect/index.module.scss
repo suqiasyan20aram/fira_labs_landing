@@ -13,9 +13,11 @@
 }
 
 .sectionTitle {
-  font-size: 70px;
+  font-size: 60px;
   text-align: left;
   color: var(--app-gray-1);
+  display: inline-block;
+  background-image: linear-gradient(to bottom, transparent 50%, var(--app-purple-1));
   margin-bottom: 32px;
 }
 
@@ -24,29 +26,29 @@
   font-size: 24px;
   text-align: left;
   color: var(--app-gray-1);
-  margin-bottom: 16px;
-}
-
-.line {
-  height: 5px;
-  width: 100%;
-  max-width: 500px;
-  clip-path: url(#clip);
-  position: relative;
   margin-bottom: 90px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: var(--app-black-1);
-    z-index: 1;
-    clip-path: url(#clip);
-  }
 }
+
+//.line {
+//  height: 5px;
+//  width: 100%;
+//  max-width: 500px;
+//  clip-path: url(#clip);
+//  position: relative;
+//  margin-bottom: 90px;
+//
+//  &:before {
+//    content: '';
+//    position: absolute;
+//    height: 100%;
+//    width: 100%;
+//    top: 0;
+//    left: 0;
+//    background: var(--app-black-1);
+//    z-index: 1;
+//    clip-path: url(#clip);
+//  }
+//}
 
 .cards {
   gap: 24px;

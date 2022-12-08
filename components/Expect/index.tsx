@@ -112,7 +112,6 @@ const Expect = () => {
                 <p className={styles.sectionSubTitle}>As an outcome we expect to see your business perform and meet
                     evolving market needs.
                 </p>
-                <div className={styles.line}/>
             </div>
             <div className={styles.cards}>
                 {data.map(item => {

@@ -6,11 +6,12 @@
 }
 
 .sectionTitle {
-  font-size: 70px;
-  padding: 0 80px;
+  font-size: 60px;
   text-align: left;
   color: var(--app-white-2);
-  margin-bottom: 32px;
+  display: inline-block;
+  margin: 0 80px 32px;
+  background-image: linear-gradient(to bottom, transparent 50%, var(--app-green-3));
 }
 
 .sectionSubTitle {

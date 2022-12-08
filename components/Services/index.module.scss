@@ -4,10 +4,13 @@
   background-color: var(--app-black-2);
 
   .sectionTitle {
+    font-size: 60px;
+    text-align: left;
     display: inline-block;
     color: var(--app-white-1);
     background-image: linear-gradient(to bottom, transparent 50%, var(--app-yellow-2));
     margin-bottom: 48px;
+
   }
 
   .section {

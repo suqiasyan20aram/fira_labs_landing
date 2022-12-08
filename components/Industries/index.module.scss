@@ -10,7 +10,6 @@
 .wrapper {
   background: #123;
   position: relative;
-  padding: 250px 24px;
   overflow: hidden;
 }
 
@@ -31,6 +30,7 @@
 
   &::after,
   &::before {
+    pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,6 +59,7 @@
 
   &::after,
   &::before {
+    pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -72,24 +73,35 @@
   }
 }
 
-.title {
-  font-size: 60px;
-  text-align: center;
-  color: var(--app-blue-4);
-  margin-bottom: 16px;
-  text-transform: capitalize;
-  text-shadow: 0 1px 5px rgba(0,0,0,1);
-}
+.main {
+  padding: 100px 40px;
 
-.description {
-  font-size: 28px;
-  font-weight: 300;
-  text-align: center;
-  color: var(--app-white-2);
-  max-width: 1000px;
-  line-height: 50px;
-  margin: 0 auto;
-  text-shadow: 0 1px 5px rgba(0,0,0,1);
+  .title {
+    font-size: 60px;
+    text-align: left;
+    margin-bottom: 16px;
+    color: var(--app-white-1);
+    display: inline-block;
+    background-image: linear-gradient(to bottom, transparent 50%, var(--app-yellow-2));
+  }
+
+  .description {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: left;
+    color: var(--app-white-2);
+    max-width: 1000px;
+    line-height: 50px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 1);
+  }
+
+  .canvas {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  position: relative;
 }
 
 @keyframes move {
