@@ -161,7 +161,7 @@ const Authors = () => {
                         to
                         act in the best interest of the business we work with.
                     </p>
-                    <Button text={'Join Fira Labs DAO'} variant={'primary-outline'}/>
+                    <Button text={'Explore DAO'} variant={'primary-outline'}/>
                 </div>
             </div>
 

@@ -9,18 +9,15 @@ import firaLogoPart2 from '../../assets/images/logo-part-2.svg'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 interface HeaderProps {
-    animated?: boolean
+    animated?: boolean,
+    menuIsShown: boolean,
+    toggleMenu: (shown: boolean) => void
 }
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Header: FC<HeaderProps> = ({animated}) => {
+const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
     const ref = useRef<HTMLDivElement>(null);
-    const [open, setOpen] = useState(false);
-
-    const toggleMenu = (open: boolean) => {
-        setOpen(open)
-    }
 
     useEffect(() => {
         const element = ref.current;
@@ -53,8 +50,8 @@ const Header: FC<HeaderProps> = ({animated}) => {
             <div className={styles.header}>
                 <div className={styles.headerOverlay}/>
                 <div className={styles.headerMain}>
-                    <div className={classNames([styles.headerMenu, {[styles.headerMenuOpen]: open}])}>
-                        <label onClick={() => toggleMenu(!open)}>
+                    <div className={classNames([styles.headerMenu, {[styles.headerMenuOpen]: menuIsShown}])}>
+                        <label onClick={() => toggleMenu(!menuIsShown)}>
                             <span></span>
                             <span></span>
                             <span></span>

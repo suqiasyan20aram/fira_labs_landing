@@ -76,3 +76,23 @@
     background-color: var(--app-red-1);
   }
 }
+
+@media screen and (max-width: 425px) {
+  .button {
+    padding: 16px;
+
+    &:hover {
+      padding-right: 40px;
+
+      .text {
+        transform: translateX(-10px);
+      }
+
+      .arrow {
+        opacity: 1;
+        transform: translateY(-50%) translateX(-25px);
+      }
+    }
+
+  }
+}

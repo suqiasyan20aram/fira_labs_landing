@@ -41,6 +41,8 @@ const sizes = {
 }
 
 const Industries = () => {
+    let timer = useRef<any>(null);
+    let requestFrameId = useRef<any>(null);
     let theCanvas = useRef<any>(null).current;
 
     const data = useMemo(() => {
@@ -258,13 +260,13 @@ const Industries = () => {
         }
 
         function gameLoop() {
-            requestAnimationFrame(gameLoop)
+            requestFrameId.current = requestAnimationFrame(gameLoop)
             if (theCanvas) {
                 drawScreen()
             }
         }
 
-        requestAnimationFrame(gameLoop)
+        requestFrameId.current = requestAnimationFrame(gameLoop)
     }
 
     const onLoad = () => {
@@ -274,13 +276,26 @@ const Industries = () => {
         canvasApp();
     }
 
+    const onResize = () => {
+        balls = [];
+        clearTimeout(timer.current);
+        window.cancelAnimationFrame(requestFrameId.current);
+        timer.current = setTimeout(() => {
+            theCanvas.width = window.innerWidth - 80;
+            theCanvas.height = sizes[getSize()].canvasHeight;
+            context = theCanvas.getContext('2d');
+            canvasApp();
+        }, 300)
+    }
+
     useEffect(() => {
         window.addEventListener('load', onLoad);
-        //
+        window.addEventListener('resize', onResize);
+
         return () => {
             window.removeEventListener('load', onLoad);
+            window.removeEventListener('resize', onResize);
         }
-
     }, [])
 
     return (

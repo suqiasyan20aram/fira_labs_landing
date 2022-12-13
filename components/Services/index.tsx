@@ -12,15 +12,82 @@ const Process = () => {
     const data = [
         {
             title: 'Consulting',
-            children: ['Business model strategy', 'Market and consumer research', 'Roadmap for go-to market initiatives', 'DAO’s and Token Economics']
+            children: [
+                {
+                    title: 'Business model strategy',
+                    description: 'We’ll come up with a business model strategy that would be the most efficient for new solutions we make together by focusing on building competitive advantage.'
+                },
+                {
+                    title: 'Market and consumer research',
+                    description: 'Our experts will research, investigate and analyze a target market to collect data and test the viability of a new product or service.'
+                },
+                {
+                    title: 'Roadmap for go-to market initiatives',
+                    description: 'Our product managers capture and coordinate the timing of all the cross-functional activities required to release a well-structured go-to-market roadmap.'
+                },
+                {
+                    title: 'DAO’s and Token Economics',
+                    description: 'Our managers of development will help you to create a proper incentivization model which in turn will increase the value for token holders and create an economic model which benefits all stakeholders in the system.'
+                },
+            ]
         },
         {
             title: 'Marketing',
-            children: ["Community building", "Metaverse activation campaign", "Content creation", "Giveaway campaigns", "Influencer marketing"]
+            children: [
+                {
+                    title: "Community building",
+                    description: "Community marketing will allow to build reputation and setup for resilient growth in the long-term and bring customers together over a topic that is aligned with, or directly related to, a brand in an engaging and non-intrusive way."
+                },
+                {
+                    title: "Metaverse activation campaign",
+                    description: "Our Metaverse activation experts find the proper virtual environment where the brand would live and decide how it will interact with its audience within the platform."
+                },
+                {
+                    title: "Content creation",
+                    description: "Web3 creates an entirely different communications experience between sites and users from anything we’ve seen so far by mixing existing means of content creation with advanced technologies like AR, VR and Metaverse."
+                },
+                {
+                    title: "Giveaway campaigns",
+                    description: "By using a large toolkit of giveaway initiatives our team of growth hackers will activate giveaway campaigns that include crypto airdrops, freemints, rumbles and more mechanisms to grow the size audience in decentralized and traditional social media platforms."
+                },
+                {
+                    title: "Influencer marketing",
+                    description: "Having a vast network of partners and toolkit for targeting most prominent influencers in our clients’ domains our marketing experts will launch influencer marketing campaigns within any budget without sacrificing the efficiency of the initiative."
+                },
+            ]
         },
         {
             title: 'Development',
-            children: ["dApp Development", "Token Design and DAO governance", "Smart Contracts", "Protocol Design", "Decentralized Websites", "NFT Marketplace and Minting", "DEXs & DeFi"]
+            children: [
+                {
+                    title: "dApp Development",
+                    description: "Experinced in Solidity, Golang and Rust, we build decentralized web applications to support web3 services and solutions. Our web developers are committed to build next-gen customized web3 dApps."
+                },
+                {
+                    title: "Token Design and DAO governance",
+                    description: "Proper token design lays under every successful DAO as its main purpose is to automate and decentralize the governance of organizations, such as corporations. The structure of DAOs is flat and depends on the operation of smart contracts to enforce rules and decisions within the organization."
+                },
+                {
+                    title: "Smart Contracts",
+                    description: "We have an extensive experience in developing smart contracts for our clients and ensure full-cycle smart contract development process starting with defining the business logic and completing it with write unit tests to make sure it performs as intended."
+                },
+                {
+                    title: "Protocol Design",
+                    description: "While looking for right protocol for your use case our blockchain engineers will focus on various factors like bridging, cost, energy efficiency to make sure the protocol design will serve the goal."
+                },
+                {
+                    title: "Decentralized Websites",
+                    description: "By using IPFS, ENS and Limo technologies our team of web engineers will develop a fully decentralized websites and apps on the new open web: permissionless, trustless, censorship resistant, and free of centralized gatekeepers."
+                },
+                {
+                    title: "NFT Marketplace and Minting",
+                    description: "Bringing the latest methods and technologies to you disposition our developers will take care of all the aspects of NFT development including NFT marketplace developments, NFT minting and storage, NFT game development."
+                },
+                {
+                    title: "DEXs & DeFi",
+                    description: "We are experts in developing and building innovative DeFi solutions. DeFi products and services  disrupt the role of intermediaries and redefine traditional financial services such as lending, trading, investment, payment and insurance."
+                },
+            ]
         }
     ]
 
@@ -126,10 +193,9 @@ const Process = () => {
                     <div className={styles.services}>
                         {data[0].children.map(service => {
                             return (
-                                <div key={service} className={styles.service}>
-                                    <h3 key={service} className={styles.serviceTitle}>{service}</h3>
-                                    <p className={styles.serviceDescription}>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros. </p>
+                                <div key={service.title} className={styles.service}>
+                                    <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
+                                    <p className={styles.serviceDescription}>{service.description} </p>
                                     <span className={styles.serviceButton}>Learn More</span>
                                 </div>
                             )
@@ -138,23 +204,20 @@ const Process = () => {
                     <div className={styles.services}>
                         {data[1].children.map(service => {
                             return (
-                                <div key={service} className={styles.service}>
-                                    <h3 key={service} className={styles.serviceTitle}>{service}</h3>
-                                    <p className={styles.serviceDescription}>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros. </p>
+                                <div key={service.title} className={styles.service}>
+                                    <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
+                                    <p className={styles.serviceDescription}>{service.description} </p>
                                     <span className={styles.serviceButton}>Learn More</span>
                                 </div>
-
                             )
                         })}
                     </div>
                     <div className={styles.services}>
                         {data[2].children.map(service => {
                             return (
-                                <div key={service} className={styles.service}>
-                                    <h3 key={service} className={styles.serviceTitle}>{service}</h3>
-                                    <p className={styles.serviceDescription}>Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Suspendisse varius enim in eros. </p>
+                                <div key={service.title} className={styles.service}>
+                                    <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
+                                    <p className={styles.serviceDescription}>{service.description} </p>
                                     <span className={styles.serviceButton}>Learn More</span>
                                 </div>
                             )
