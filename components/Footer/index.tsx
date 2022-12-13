@@ -4,7 +4,10 @@ import Image from "next/image";
 import styles from './index.module.scss'
 import logo1 from '../../assets/images/logo-part-1-white.svg'
 import logo2 from '../../assets/images/logo-part-2-white.svg'
-import classNames from "classnames";
+import footerLink1 from '../../assets/images/iso-footer-1.png'
+import footerLink2 from '../../assets/images/iso-footer-2.png'
+import footerLink3 from '../../assets/images/iso-footer-3.png'
+import footerLink4 from '../../assets/images/iso-footer-4.png'
 
 const Footer = () => {
     return (
@@ -205,9 +208,12 @@ const Footer = () => {
                 </div>
             </div>
             <div className={styles.bottom}>
-                <span className={styles.copyRight}>
-                    Copyright © 2023
-                </span>
+                <div className={styles.links}>
+                    <Image src={footerLink1} alt={'link'}/>
+                    <Image src={footerLink2} alt={'link'}/>
+                    <Image src={footerLink3} alt={'link'}/>
+                    <Image src={footerLink4} alt={'link'}/>
+                </div>
                 <div className={styles.footerSocials}>
                     <a href={'mailto:enquiry@firalabs.com'}>enquiry@firalabs.com</a>
                     <a href={'https://telegram.com'} className={styles.headerSocialIcon}>
