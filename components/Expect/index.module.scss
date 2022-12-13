@@ -166,6 +166,10 @@
 @media screen and (max-width: 1024px) {
   .sectionTitle {
     font-size: 60px;
+    margin-bottom: 16px;
+  }
+  .sectionSubTitle {
+    font-size: 20px;
   }
   .cards {
     flex-direction: column;
@@ -198,7 +202,6 @@
 @media screen and (max-width: 425px) {
   .sectionTitle {
     font-size: 24px;
-    margin-bottom: 16px;
   }
 
   .sectionSubTitle {
@@ -211,7 +214,7 @@
       font-size: 30px;
     }
 
-    .cardDescription{
+    .cardDescription {
       font-size: 16px;
     }
 

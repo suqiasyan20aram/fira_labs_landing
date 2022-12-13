@@ -1,19 +1,21 @@
-import React, {useMemo, useState} from 'react';
+import React, {useMemo} from 'react';
+import Image from "next/image";
+import classNames from "classnames";
 
 import styles from './index.module.scss'
-import classNames from "classnames";
+import closeIcon from '../../assets/images/close.svg'
 
 interface MenuProps {
     menuIsShown: boolean,
-    toggleMenu: (shown: boolean) => void
+    onClose: () => void
 }
 
-const Menu: React.FC<MenuProps> = ({menuIsShown, toggleMenu}) => {
+const Menu: React.FC<MenuProps> = ({menuIsShown, onClose}) => {
     const data = useMemo(() => {
         return [
             {
                 id: 1,
-                title: 'Robert Mkrtchian',
+                title: 'Services',
                 profession: 'Product, Operations',
             },
             {
@@ -29,10 +31,22 @@ const Menu: React.FC<MenuProps> = ({menuIsShown, toggleMenu}) => {
         ]
     }, [])
 
-    console.log(menuIsShown)
     return (
         <div className={classNames([styles.menu, {[styles.shown]: menuIsShown}])}>
-            <button onClick={() => toggleMenu(false)}>Close</button>
+            <div className={styles.header}>
+                <span className={styles.close} onClick={onClose}>
+                    <Image src={closeIcon} alt={'close'} width={24} height={24}/>
+                </span>
+            </div>
+            <div className={styles.list}>
+                {data.map(item => {
+                    return (
+                        <div key={item.id} className={styles.listItem}>
+                            <span className={styles.title}>{item.title}</span>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

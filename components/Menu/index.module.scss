@@ -6,10 +6,34 @@
   height: 100vh;
   position: fixed;
   transform: translateX(-100%);
-  background-color: var(--app-red-2);
   transition: 0.3s transform ease;
+  background-color: rgba(255,255,255, 0.4);
+  backdrop-filter: blur(3px);
+  padding: 16px 24px;
 
   &.shown {
     transform: translateX(0%);
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+
+    i {
+      font-size: 30px;
+      color: var(--app-gray-1);
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+
+    .listItem {
+      .title {
+        font-size: 18px;
+        color: var(--app-gray-1);
+      }
+    }
   }
 }

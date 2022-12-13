@@ -1,13 +1,14 @@
-import React, {useMemo, useState} from 'react';
+import React from 'react';
 import Image from "next/image";
 
 import styles from './index.module.scss'
 import logo1 from '../../assets/images/logo-part-1-white.svg'
 import logo2 from '../../assets/images/logo-part-2-white.svg'
+import classNames from "classnames";
 
 const Footer = () => {
     return (
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.left}>
                     <Image src={logo1} alt={'logo'}/>
@@ -203,7 +204,24 @@ const Footer = () => {
                     <Image src={logo2} alt={'logo'}/>
                 </div>
             </div>
-        </div>
+            <div className={styles.bottom}>
+                <span className={styles.copyRight}>
+                    Copyright © 2023
+                </span>
+                <div className={styles.footerSocials}>
+                    <a href={'mailto:enquiry@firalabs.com'}>enquiry@firalabs.com</a>
+                    <a href={'https://telegram.com'} className={styles.headerSocialIcon}>
+                        <i className={'icon-telegram'}></i>
+                    </a>
+                    <a href={'https://twitter.com'} className={styles.headerSocialIcon}>
+                        <i className={'icon-twitter'}></i>
+                    </a>
+                    <a href={'https://linkedin.com'} className={styles.headerSocialIcon}>
+                        <i className={'icon-linkedin'}></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     )
 }
 

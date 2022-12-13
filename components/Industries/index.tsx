@@ -270,10 +270,12 @@ const Industries = () => {
     }
 
     const onLoad = () => {
-        theCanvas.width = window.innerWidth - 80;
-        theCanvas.height = sizes[getSize()].canvasHeight;
-        context = theCanvas.getContext('2d');
-        canvasApp();
+        if (theCanvas) {
+            theCanvas.width = window.innerWidth - 80;
+            theCanvas.height = sizes[getSize()].canvasHeight;
+            context = theCanvas.getContext('2d');
+            canvasApp();
+        }
     }
 
     const onResize = () => {
@@ -281,10 +283,12 @@ const Industries = () => {
         clearTimeout(timer.current);
         window.cancelAnimationFrame(requestFrameId.current);
         timer.current = setTimeout(() => {
-            theCanvas.width = window.innerWidth - 80;
-            theCanvas.height = sizes[getSize()].canvasHeight;
-            context = theCanvas.getContext('2d');
-            canvasApp();
+            if (theCanvas) {
+                theCanvas.width = window.innerWidth - 80;
+                theCanvas.height = sizes[getSize()].canvasHeight;
+                context = theCanvas.getContext('2d');
+                canvasApp();
+            }
         }, 300)
     }
 
@@ -303,8 +307,7 @@ const Industries = () => {
             <div className={styles.container}>
                 <div className={styles.containerInner}>
                     <div className={styles.main}>
-                        <h2 className={styles.title}>Industries we embrace
-                        </h2>
+                        <h2 className={styles.title}>Industries we embrace</h2>
                         <p className={styles.description}>
                             Decentralize everything: Grow within Token Economy and build on the New Internet
                         </p>

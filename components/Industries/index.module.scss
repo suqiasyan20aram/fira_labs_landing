@@ -86,7 +86,7 @@
   }
 
   .description {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 300;
     text-align: left;
     color: var(--app-white-2);
@@ -113,8 +113,41 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .main {
+    padding: 20px;
+
+    .title {
+      font-size: 60px;
+    }
+
+    .description {
+      font-size: 20px;
+      line-height: initial;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .main {
     padding: 20px;
+
+    .title {
+      font-size: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main {
+    padding: 20px;
+
+    .title {
+      font-size: 24px;
+    }
+
+    .description {
+      font-size: 16px;
+    }
   }
 }

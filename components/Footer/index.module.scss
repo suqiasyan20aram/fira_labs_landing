@@ -74,8 +74,34 @@
       display: flex;
       flex-direction: column;
     }
+  }
 
+  .bottom {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    .copyRight {
+      font-size: 16px;
+      color: var(--app-white-2)
+    }
+
+    .footerSocials {
+      gap: 16px;
+      display: flex;
+      align-items: center;
+
+      a {
+        font-size: 16px;
+        color: var(--app-white-2);
+        text-decoration: none;
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
   }
 }
 
@@ -183,6 +209,15 @@
             flex-direction: row;
           }
         }
+      }
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .copyRight {
+        margin-bottom: 8px;
       }
     }
   }

@@ -15,7 +15,7 @@ export default function App({Component, pageProps}: AppProps) {
 
     return (
         <div>
-            <Menu menuIsShown={menuIsShown} toggleMenu={toggleMenu}/>
+            <Menu menuIsShown={menuIsShown} onClose={() => toggleMenu(false)}/>
             <Header animated={true} menuIsShown={menuIsShown} toggleMenu={toggleMenu}/>
             <Component {...pageProps} />
             <Footer/>

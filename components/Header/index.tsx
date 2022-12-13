@@ -4,6 +4,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import styles from './index.module.scss'
+import menu from '../../assets/images/menu.svg'
 import firaLogoPart1 from '../../assets/images/logo-part-1.svg'
 import firaLogoPart2 from '../../assets/images/logo-part-2.svg'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
@@ -52,9 +53,7 @@ const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
                 <div className={styles.headerMain}>
                     <div className={classNames([styles.headerMenu, {[styles.headerMenuOpen]: menuIsShown}])}>
                         <label onClick={() => toggleMenu(!menuIsShown)}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <Image src={menu} alt={'menu'} width={24} height={24}/>
                         </label>
                     </div>
                     <div className={styles.headerLogo}>
