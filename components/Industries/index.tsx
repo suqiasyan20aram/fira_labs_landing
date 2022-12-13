@@ -1,32 +1,57 @@
 import {useRef, useMemo, useEffect} from "react";
 
 import styles from './index.module.scss'
-import industies1 from '../../assets/images/industies-1.svg';
-import industies2 from '../../assets/images/industies-2.svg';
-import industies3 from '../../assets/images/industies-3.svg';
-import industies4 from '../../assets/images/industies-4.svg';
-import industies5 from '../../assets/images/industies-5.svg';
-
 
 let context: any;
 let balls = new Array(0);
 let tempBall: { x: number; y: number; nextx: number; nexty: number; radius: number; speed: number; angle: number; velocityx: number; velocityy: number; mass: number; };
-let images: { src: string; }[] = [];
 
+const getSize = () => {
+    return window.innerWidth > 1024 ? 'desktop' : window.innerWidth <= 1024 && window.innerWidth >= 425 ? 'tablet' : 'mobile'
+}
+
+const sizes = {
+    desktop: {
+        ballRadius: 110,
+        numberFontSize: 60,
+        numberOffset: 0,
+        fontSize: 20,
+        textOffset: 60,
+        whiteArcOffset: -20,
+        canvasHeight: 800,
+    },
+    tablet: {
+        ballRadius: 60,
+        numberFontSize: 30,
+        numberOffset: -9,
+        fontSize: 14,
+        textOffset: 30,
+        whiteArcOffset: -20,
+        canvasHeight: 800,
+    },
+    mobile: {
+        ballRadius: 40,
+        numberFontSize: 20,
+        numberOffset: -2,
+        fontSize: 10,
+        textOffset: 20,
+        whiteArcOffset: -10,
+        canvasHeight: 550,
+    },
+}
 
 const Industries = () => {
-    const timer = useRef<any>(null);
     let theCanvas = useRef<any>(null).current;
 
     const data = useMemo(() => {
         return [
-            {image: industies1, title: 'Banking'},
-            {image: industies2, title: 'Education'},
-            {image: industies3, title: 'Healthcare'},
-            {image: industies4, title: 'Fashion'},
-            {image: industies3, title: 'Gaming'},
-            {image: industies4, title: 'Events'},
-            {image: industies5, title: 'Advertising'},
+            {title: 'Banking'},
+            {title: 'Education'},
+            {title: 'Healthcare'},
+            {title: 'Fashion'},
+            {title: 'Gaming'},
+            {title: 'Events'},
+            {title: 'Advertising'},
         ]
     }, [])
 
@@ -101,18 +126,18 @@ const Industries = () => {
                 context.fillStyle = grd;
                 context.fill();
                 context.beginPath();
-                context.arc(ball.x, ball.y - 20, 40, 0, Math.PI * 2, true);
+                context.arc(ball.x, ball.y + sizes[getSize()].whiteArcOffset, ball.radius / 3, 0, Math.PI * 2, true);
                 context.fillStyle = '#ffffff';
                 context.fill();
                 context.closePath();
                 context.fillStyle = "#000000";
-                context.font = "bold 60px SF Pro, sans-serif, bold,italic";
+                context.font = `bold ${sizes[getSize()].numberFontSize}px SF Pro, sans-serif, bold,italic`;
                 context.textAlign = "center";
-                context.fillText(i + 1, ball.x, ball.y);
+                context.fillText(i + 1, ball.x, ball.y + sizes[getSize()].numberOffset);
                 context.fillStyle = "#cccccc";
-                context.font = "20px SF Pro, sans-serif";
+                context.font = `${sizes[getSize()].fontSize}px SF Pro, sans-serif`;
                 context.textAlign = "center";
-                context.fillText(data[i].title.toUpperCase(), ball.x, ball.y + 60);
+                context.fillText(data[i].title.toUpperCase(), ball.x, ball.y + sizes[getSize()].textOffset);
                 context.shadowColor = "rgba(0,0,0,0)";
                 context.shadowBlur = 15;
                 context.fillStyle = grd;
@@ -191,7 +216,7 @@ const Industries = () => {
         }
 
         for (let i = 0; i < data.length; i++) {
-            const tempRadius = 110;
+            const tempRadius = sizes[getSize()].ballRadius;
             let placeOK = false;
             while (!placeOK) {
                 const tempX = tempRadius + (Math.floor(Math.random() * theCanvas.width) - tempRadius);
@@ -244,21 +269,9 @@ const Industries = () => {
 
     const onLoad = () => {
         theCanvas.width = window.innerWidth - 80;
-        theCanvas.height = 800;
-        Promise.all(data.map((item) => {
-            const image = item.image;
-            const i = new Image(60, 60);
-            i.src = image.src;
-            return new Promise(resolve => {
-                i.onload = () => {
-                    resolve(i);
-                }
-            });
-        })).then((data: any) => {
-            images = data;
-            context = theCanvas.getContext('2d');
-            canvasApp();
-        });
+        theCanvas.height = sizes[getSize()].canvasHeight;
+        context = theCanvas.getContext('2d');
+        canvasApp();
     }
 
     useEffect(() => {

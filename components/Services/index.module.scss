@@ -1,6 +1,6 @@
 .sectionWrapper {
   position: relative;
-  padding: 100px 5rem;
+  padding: 100px 60px;
   background-color: var(--app-black-2);
 
   .sectionTitle {
@@ -39,7 +39,6 @@
       flex-direction: column;
 
       .services {
-
         .service {
           padding: 4rem 0;
           border-bottom: 1px solid var(--app-black-3);
@@ -69,3 +68,70 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .sectionWrapper {
+    padding: 100px 24px;
+
+    .sectionTitle {
+      font-size: 60px;
+    }
+
+    .section {
+      .left {
+        margin-right: 60px;
+
+        .leftTitle {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sectionWrapper {
+    .sectionTitle {
+      font-size: 32px;
+    }
+
+    .section {
+      .left {
+        display: none;
+        margin-right: 60px;
+
+        .leftTitle {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .sectionWrapper {
+    padding: 40px 24px;
+
+    .sectionTitle {
+      font-size: 32px;
+    }
+
+    .section {
+      .right {
+        .services {
+          .service {
+            padding: 24px 0;
+
+            .serviceTitle {
+              font-size: 24px;
+            }
+
+            .serviceDescription {
+              font-size: 18px;
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

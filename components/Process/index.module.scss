@@ -179,11 +179,12 @@
 @media screen and (max-width: 768px) {
   .sectionTitle {
     font-size: 40px;
-    padding: 0 24px;
+    margin-left: 24px;
   }
 
   .sectionSubTitle {
     padding: 0 24px;
+    width: 100%;
   }
 
   .row {
@@ -206,6 +207,16 @@
 }
 
 @media screen and (max-width: 425px) {
+  .sectionTitle {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .sectionSubTitle {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
   .number {
     font-size: 30px;
   }

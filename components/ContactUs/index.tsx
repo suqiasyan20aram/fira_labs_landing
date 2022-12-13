@@ -4,7 +4,8 @@ import styles from './index.module.scss'
 import classNames from "classnames";
 
 interface Row {
-    text: string
+    text: string,
+    className?: string
 }
 
 const ContactUs = () => {
@@ -79,15 +80,29 @@ const ContactUs = () => {
         return str.replace(/\s/g, '&nbsp')
     }
 
-
     const onComplete = async (info: any) => {
-        createNewRow({text: replaceSpaces(`  ________                __      __  __           `)})
-        createNewRow({text: replaceSpaces(` /_  __/ /_  ____ _____  / /__    \\ \\/ /___  __  __`)})
-        createNewRow({text: replaceSpaces(`  / / / __ \\/ __ \`/ __ \\/ //_/     \\  / __ \\/ / / /`)})
-        createNewRow({text: replaceSpaces(`&nbsp;/ / / / / / /_/ / / / / ,<        / / /_/ / /_/ / `)})
-        createNewRow({text: replaceSpaces(`/_/ /_/ /_/\\__,_/_/ /_/_/|_|      /_/\\____/\\__,_/  `)})
-        createNewRow({text: `&nbsp;`});
-        createNewRow({text: `&nbsp;`});
+        createNewRow({
+            text: replaceSpaces(`  ________                __      __  __           `),
+            className: styles.bigText
+        })
+        createNewRow({
+            text: replaceSpaces(` /_  __/ /_  ____ _____  / /__    \\ \\/ /___  __  __`),
+            className: styles.bigText
+        })
+        createNewRow({
+            text: replaceSpaces(`  / / / __ \\/ __ \`/ __ \\/ //_/     \\  / __ \\/ / / /`),
+            className: styles.bigText
+        })
+        createNewRow({
+            text: replaceSpaces(`&nbsp;/ / / / / / /_/ / / / / ,<        / / /_/ / /_/ / `),
+            className: styles.bigText
+        })
+        createNewRow({
+            text: replaceSpaces(`/_/ /_/ /_/\\__,_/_/ /_/_/|_|      /_/\\____/\\__,_/  `),
+            className: styles.bigText
+        })
+        createNewRow({text: `&nbsp;`, className: styles.bigText});
+        createNewRow({text: `&nbsp;`, className: styles.bigText});
 
         const formData = new FormData();
         const params = {
@@ -113,20 +128,34 @@ const ContactUs = () => {
                 body: formData
             })
             const data = await res.json();
-            console.log('data', data)
         } catch (e) {
-            console.log(e)
+            // console.log(e)
         }
     }
 
     useEffect(() => {
-        createNewRow({text: replaceSpaces(`   ______            __             __               `)});
-        createNewRow({text: replaceSpaces(`  / ____/___  ____  / /_____ ______/ /_   __  _______`)});
-        createNewRow({text: replaceSpaces(` / /   / __ \\/ __ \\/ __/ __ \`/ ___/ __/  / / / / ___/`)});
-        createNewRow({text: replaceSpaces(`/ /___/ /_/ / / / / /_/ /_/ / /__/ /_   / /_/ (__  ) `)});
-        createNewRow({text: replaceSpaces(`\\____/\\____/_/ /_/\\__/\\__,_/\\___/\\__/   \\__,_/____/  `)});
-        createNewRow({text: `&nbsp;`});
-        createNewRow({text: `&nbsp;`});
+        createNewRow({
+            text: replaceSpaces(`   ______            __             __               `),
+            className: styles.bigText
+        });
+        createNewRow({
+            text: replaceSpaces(`  / ____/___  ____  / /_____ ______/ /_   __  _______`),
+            className: styles.bigText
+        });
+        createNewRow({
+            text: replaceSpaces(` / /   / __ \\/ __ \\/ __/ __ \`/ ___/ __/  / / / / ___/`),
+            className: styles.bigText
+        });
+        createNewRow({
+            text: replaceSpaces(`/ /___/ /_/ / / / / /_/ /_/ / /__/ /_   / /_/ (__  ) `),
+            className: styles.bigText
+        });
+        createNewRow({
+            text: replaceSpaces(`\\____/\\____/_/ /_/\\__/\\__,_/\\___/\\__/   \\__,_/____/  `),
+            className: styles.bigText
+        });
+        createNewRow({text: `&nbsp;`, className: styles.bigText});
+        createNewRow({text: `&nbsp;`, className: styles.bigText});
         createNewRow();
 
         const nextRowParams = {text: getNextRowText(getFirstEmptyRowType(info))};
@@ -146,7 +175,7 @@ const ContactUs = () => {
                     {rows.map((row, index) => {
                         return (
                             <p key={index} className={styles.line}>
-                                <span dangerouslySetInnerHTML={{__html: row.text}}/>
+                                <span dangerouslySetInnerHTML={{__html: row.text}} className={row.className}/>
                                 {index === rows.length - 1 &&
                                     <div className={styles.interactiveRow}>
                                         <div contentEditable={true} ref={inputRef}

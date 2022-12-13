@@ -59,9 +59,17 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 24px;
+  }
+}
 @media screen and (max-width: 425px) {
   .title {
-    font-size: 40px;
+    font-size: 32px;
   }
   .description {
     font-size: 24px;
