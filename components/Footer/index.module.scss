@@ -78,7 +78,7 @@
     }
   }
 
-  .bottom {
+  .footerMiddleSection {
     padding: 24px 0;
     display: flex;
     align-items: center;
@@ -116,6 +116,44 @@
       }
     }
   }
+
+  .footerCopySection {
+    display: flex;
+    margin-left: 250px;
+    margin-right: 250px;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    justify-content: space-between;
+
+    .footerCopySectionLinks {
+      width: 40%;
+      gap: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .footerCopySectionLink {
+        font-size: 12px;
+        flex-shrink: 0;
+        text-decoration: none;
+        color: var(--app-gray-2);
+        padding-right: 4px;
+        border-right: 1px solid var(--app-gray-2);
+      }
+    }
+
+    .copyRight {
+      gap: 4px;
+      display: flex;
+      flex-direction: column;
+
+      .copyRightRow {
+        font-size: 12px;
+        text-align: right;
+        color: var(--app-gray-2);
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -130,7 +168,12 @@
       }
     }
 
-    .bottom {
+    .footerMiddleSection {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .footerCopySection {
       margin-left: 100px;
       margin-right: 100px;
     }
@@ -185,10 +228,16 @@
       }
     }
 
-    .bottom {
+    .footerMiddleSection {
       margin-left: 0;
       margin-right: 0;
       padding: 48px;
+    }
+
+    .footerCopySection {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 48px 40px;
     }
   }
 }
@@ -236,7 +285,7 @@
       }
     }
 
-    .bottom {
+    .footerMiddleSection {
       padding: 24px;
       flex-direction: column;
       align-items: flex-start;
@@ -249,6 +298,30 @@
         img {
           width: auto;
           height: auto;
+          max-width: 60%;
+        }
+      }
+    }
+
+    .footerCopySection {
+      padding: 0 24px 40px;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .footerCopySectionLinks {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .copyRight {
+        width: 100%;
+        gap: 6px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .copyRightRow{
+          text-align: left;
         }
       }
     }

@@ -7,9 +7,8 @@
   position: fixed;
   transform: translateX(-100%);
   transition: 0.3s transform ease;
-  background-color: rgba(255,255,255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(3px);
-  padding: 16px 24px;
 
   &.shown {
     transform: translateX(0%);
@@ -17,11 +16,11 @@
 
   .header {
     display: flex;
+    padding: 16px;
     justify-content: flex-end;
 
-    i {
-      font-size: 30px;
-      color: var(--app-gray-1);
+    .close {
+      cursor: pointer;
     }
   }
 
@@ -30,9 +29,23 @@
     flex-direction: column;
 
     .listItem {
+      padding: 8px 16px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: 0.2s background-color ease;
+
       .title {
-        font-size: 18px;
+        font-size: 20px;
         color: var(--app-gray-1);
+        transition: 0.2s color ease;
+      }
+
+      &:hover {
+        background-color: var(--app-gray-1);
+
+        .title {
+          color: var(--app-white-2);
+        }
       }
     }
   }

@@ -181,7 +181,7 @@ const Process = () => {
     }, [])
 
     return (
-        <div ref={ref} className={styles.sectionWrapper}>
+        <div id={'section-services'} ref={ref} className={styles.sectionWrapper}>
             <h1 className={styles.sectionTitle}>High-impact services</h1>
             <div className={styles.section}>
                 <div className={styles.left}>

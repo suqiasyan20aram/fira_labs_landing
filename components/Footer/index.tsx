@@ -207,7 +207,7 @@ const Footer = () => {
                     <Image src={logo2} alt={'logo'}/>
                 </div>
             </div>
-            <div className={styles.bottom}>
+            <div className={styles.footerMiddleSection}>
                 <div className={styles.links}>
                     <Image src={footerLink1} alt={'link'}/>
                     <Image src={footerLink2} alt={'link'}/>
@@ -226,6 +226,20 @@ const Footer = () => {
                         <i className={'icon-linkedin'}></i>
                     </a>
                 </div>
+            </div>
+            <div className={styles.footerCopySection}>
+                <div className={styles.footerCopySectionLinks}>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Privacy Policy</a>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Terms Of Service</a>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Non Disclosure Agreement</a>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Acceptable User Policy</a>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Information Audit Document</a>
+                    <a href={'#'} className={styles.footerCopySectionLink}>Data Processing Agreement</a>
+                </div>
+                <p className={styles.copyRight}>
+                    <span className={styles.copyRightRow}>FiraLabs Dao.All Rights Reserved.</span>
+                    <span className={styles.copyRightRow}>© 2023 FiraLabs and Logo Are Registered Trademarks Of FiraLabs Dao</span>
+                </p>
             </div>
         </footer>
     )

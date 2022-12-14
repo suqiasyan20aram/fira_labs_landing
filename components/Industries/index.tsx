@@ -303,7 +303,7 @@ const Industries = () => {
     }, [])
 
     return (
-        <div className={styles.wrapper}>
+        <div id={'section-industries'} className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.containerInner}>
                     <div className={styles.main}>

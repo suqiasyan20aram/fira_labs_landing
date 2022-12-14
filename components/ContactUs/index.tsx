@@ -164,7 +164,7 @@ const ContactUs = () => {
     }, [])
 
     return (
-        <div className={styles.section}>
+        <div id={'section-contact'} className={styles.section}>
             <label className={styles.terminal}>
                 <div className={styles.fakeMenu}>
                     <div className={classNames(styles.fakeButtons, styles.fakeClose)}></div>
