@@ -77,6 +77,12 @@
   }
 }
 
+.link {
+  color: var(--app-white-2);
+  border-color: transparent;
+  background-color: transparent;
+}
+
 @media screen and (max-width: 425px) {
   .button {
     padding: 16px;

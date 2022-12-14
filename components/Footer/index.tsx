@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import Image from "next/image";
 
 import styles from './index.module.scss'
@@ -22,19 +23,19 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Fira Labs DAO</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">About Fira Labs DAO</a>
+                                    <Link href={'/building'}>About Fira Labs DAO</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Message from Community</a>
+                                    <Link href={'/building'}>Message from Community</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Members and Associates</a>
+                                    <Link href={'/building'}>Members and Associates</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Partners</a>
+                                    <Link href={'/building'}>Partners</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Join our DAO</a>
+                                    <Link href={'/building'}>Join our DAO</Link>
                                 </p>
                             </div>
                         </div>
@@ -43,13 +44,13 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Commitments</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Sustainability Strategy</a>
+                                    <Link href={'/building'}>Sustainability Strategy</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Corporate Social Responsibility</a>
+                                    <Link href={'/building'}>Corporate Social Responsibility</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Empowerment of oMembers</a>
+                                    <Link href={'/building'}>Empowerment of oMembers</Link>
                                 </p>
                             </div>
                         </div>
@@ -58,7 +59,7 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Fun Lab</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Win a POAP</a>
+                                    <Link href={'/building'}>Win a POAP</Link>
                                 </p>
                             </div>
                         </div>
@@ -69,16 +70,16 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Business Advancement</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Business model strategy</a>
+                                    <Link href={'/building'}>Business model strategy</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Market and consumer research</a>
+                                    <Link href={'/building'}>Market and consumer research</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Roadmap for go-to market initiatives</a>
+                                    <Link href={'/building'}>Roadmap for go-to market initiatives</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">DAO’s and Token Economics</a>
+                                    <Link href={'/building'}>DAO’s and Token Economics</Link>
                                 </p>
                             </div>
                         </div>
@@ -87,19 +88,19 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Growth Marketing</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Community building</a>
+                                    <Link href={'/building'}>Community building</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Metaverse activation campaign</a>
+                                    <Link href={'/building'}>Metaverse activation campaign</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Content creation</a>
+                                    <Link href={'/building'}>Content creation</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Giveaway campaigns</a>
+                                    <Link href={'/building'}>Giveaway campaigns</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Influencer marketing</a>
+                                    <Link href={'/building'}>Influencer marketing</Link>
                                 </p>
                             </div>
                         </div>
@@ -110,25 +111,25 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Software Development</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">dApp Development</a>
+                                    <Link href={'/building'}>dApp Development</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Token Design and DAO governance</a>
+                                    <Link href={'/building'}>Token Design and DAO governance</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Smart Contracts</a>
+                                    <Link href={'/building'}>Smart Contracts</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Protocol Design</a>
+                                    <Link href={'/building'}>Protocol Design</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Decentralized Websites</a>
+                                    <Link href={'/building'}>Decentralized Websites</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">NFT Marketplace and Minting</a>
+                                    <Link href={'/building'}>NFT Marketplace and Minting</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">DEXs & DeFi</a>
+                                    <Link href={'/building'}>DEXs & DeFi</Link>
                                 </p>
                             </div>
                         </div>
@@ -137,13 +138,13 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Resources</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Case Studies</a>
+                                    <Link href={'/building'}>Case Studies</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Use Cases</a>
+                                    <Link href={'/building'}>Use Cases</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Blog</a>
+                                    <Link href={'/building'}>Blog</Link>
                                 </p>
 
                             </div>
@@ -155,49 +156,49 @@ const Footer = () => {
                             <h2 className={styles.categoryTitle}>Technologies</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <a href="">React.js</a>
+                                    <Link href={'/building'}>React.js</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">React Native</a>
+                                    <Link href={'/building'}>React Native</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Nest.js</a>
+                                    <Link href={'/building'}>Nest.js</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Node.js</a>
+                                    <Link href={'/building'}>Node.js</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Angular 2+</a>
+                                    <Link href={'/building'}>Angular 2+</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Vue.js</a>
+                                    <Link href={'/building'}>Vue.js</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Swift</a>
+                                    <Link href={'/building'}>Swift</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">PHP (Laravel)</a>
+                                    <Link href={'/building'}>PHP (Laravel)</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Python (Django)</a>
+                                    <Link href={'/building'}>Python (Django)</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Java</a>
+                                    <Link href={'/building'}>Java</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Solidity</a>
+                                    <Link href={'/building'}>Solidity</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Rust</a>
+                                    <Link href={'/building'}>Rust</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Ruby on Rails</a>
+                                    <Link href={'/building'}>Ruby on Rails</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">C++</a>
+                                    <Link href={'/building'}>C++</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <a href="">Golang</a>
+                                    <Link href={'/building'}>Golang</Link>
                                 </p>
                             </div>
                         </div>
@@ -229,12 +230,12 @@ const Footer = () => {
             </div>
             <div className={styles.footerCopySection}>
                 <div className={styles.footerCopySectionLinks}>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Privacy Policy</a>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Terms Of Service</a>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Non Disclosure Agreement</a>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Acceptable User Policy</a>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Information Audit Document</a>
-                    <a href={'#'} className={styles.footerCopySectionLink}>Data Processing Agreement</a>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Privacy Policy</Link>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Terms Of Service</Link>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Non Disclosure Agreement</Link>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Acceptable User Policy</Link>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Information Audit Document</Link>
+                    <Link href={'/building'} className={styles.footerCopySectionLink}>Data Processing Agreement</Link>
                 </div>
                 <p className={styles.copyRight}>
                     <span className={styles.copyRightRow}>FiraLabs Dao.All Rights Reserved.</span>

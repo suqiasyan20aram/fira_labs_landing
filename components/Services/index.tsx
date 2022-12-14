@@ -3,6 +3,7 @@ import gsap from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import styles from './index.module.scss'
+import Button from "../Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +27,7 @@ const Process = () => {
                     description: 'Our product managers capture and coordinate the timing of all the cross-functional activities required to release a well-structured go-to-market roadmap.'
                 },
                 {
-                    title: 'DAO’s and Token Economics',
+                    title: 'DAO’s and tokenomics',
                     description: 'Our managers of development will help you to create a proper incentivization model which in turn will increase the value for token holders and create an economic model which benefits all stakeholders in the system.'
                 },
             ]
@@ -60,27 +61,27 @@ const Process = () => {
             title: 'Development',
             children: [
                 {
-                    title: "dApp Development",
+                    title: "dApp development",
                     description: "Experinced in Solidity, Golang and Rust, we build decentralized web applications to support web3 services and solutions. Our web developers are committed to build next-gen customized web3 dApps."
                 },
                 {
-                    title: "Token Design and DAO governance",
+                    title: "Token design and DAO governance",
                     description: "Proper token design lays under every successful DAO as its main purpose is to automate and decentralize the governance of organizations, such as corporations. The structure of DAOs is flat and depends on the operation of smart contracts to enforce rules and decisions within the organization."
                 },
                 {
-                    title: "Smart Contracts",
+                    title: "Smart contracts",
                     description: "We have an extensive experience in developing smart contracts for our clients and ensure full-cycle smart contract development process starting with defining the business logic and completing it with write unit tests to make sure it performs as intended."
                 },
                 {
-                    title: "Protocol Design",
+                    title: "Protocol design",
                     description: "While looking for right protocol for your use case our blockchain engineers will focus on various factors like bridging, cost, energy efficiency to make sure the protocol design will serve the goal."
                 },
                 {
-                    title: "Decentralized Websites",
+                    title: "Decentralized websites",
                     description: "By using IPFS, ENS and Limo technologies our team of web engineers will develop a fully decentralized websites and apps on the new open web: permissionless, trustless, censorship resistant, and free of centralized gatekeepers."
                 },
                 {
-                    title: "NFT Marketplace and Minting",
+                    title: "NFT marketplace and minting",
                     description: "Bringing the latest methods and technologies to you disposition our developers will take care of all the aspects of NFT development including NFT marketplace developments, NFT minting and storage, NFT game development."
                 },
                 {
@@ -189,14 +190,14 @@ const Process = () => {
                         return <h2 key={block.title} className={styles.leftTitle}>{block.title}</h2>
                     })}
                 </div>
-                <div className={styles.right}>
+                <div className={styles.right}>x
                     <div className={styles.services}>
                         {data[0].children.map(service => {
                             return (
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <span className={styles.serviceButton}>Learn More</span>
+                                    <Button text={'Learn More'} variant={'link'}/>
                                 </div>
                             )
                         })}
@@ -207,7 +208,7 @@ const Process = () => {
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <span className={styles.serviceButton}>Learn More</span>
+                                    <Button text={'Learn More'} variant={'link'}/>
                                 </div>
                             )
                         })}
@@ -218,7 +219,7 @@ const Process = () => {
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <span className={styles.serviceButton}>Learn More</span>
+                                    <Button text={'Learn More'} variant={'link'}/>
                                 </div>
                             )
                         })}

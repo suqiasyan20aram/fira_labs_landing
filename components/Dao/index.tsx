@@ -7,10 +7,12 @@ import styles from './index.module.scss'
 import bg from '../../assets/images/DAO-bg.png'
 import Button from "../Button";
 import {getRandomInteger} from "../../utils/constants";
+import {useRouter} from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Authors = () => {
+    const router = useRouter();
     const ref = useRef<HTMLDivElement>(null);
 
     const [style, setStyle] = useState({x: 0, y: 0})
@@ -27,6 +29,10 @@ const Authors = () => {
             }
         })
     }, [])
+
+    const navigate = () => {
+        router.push('/building')
+    }
 
     useEffect(() => {
         let animation1: gsap.core.Tween;
@@ -161,7 +167,7 @@ const Authors = () => {
                         to
                         act in the best interest of the business we work with.
                     </p>
-                    <Button text={'Explore DAO'} variant={'primary-outline'}/>
+                    <Button text={'Explore DAO'} variant={'primary-outline'} onClick={navigate}/>
                 </div>
             </div>
 

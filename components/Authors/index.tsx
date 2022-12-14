@@ -65,8 +65,8 @@ const Authors = () => {
             },
             {
                 id: 2,
-                title: 'Narek Nadarian',
-                profession: 'Exo',
+                title: 'Narek Nadaryan',
+                profession: 'Software Engineer',
                 nft: narekNFT,
                 picture: narekPicture,
                 social: [
@@ -76,8 +76,8 @@ const Authors = () => {
             },
             {
                 id: 3,
-                title: 'Aram Sukiasian',
-                profession: 'Cit',
+                title: 'Aram Sukiasyan',
+                profession: 'Software Engineer',
                 nft: aramNFT,
                 picture: aramPicture,
                 social: [

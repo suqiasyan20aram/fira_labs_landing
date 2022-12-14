@@ -1,9 +1,7 @@
 import React, {useMemo} from 'react';
-import Image from "next/image";
 import classNames from "classnames";
 
 import styles from './index.module.scss'
-import closeIcon from '../../assets/images/close.svg'
 
 interface MenuProps {
     menuIsShown: boolean,
@@ -75,11 +73,6 @@ const Menu: React.FC<MenuProps> = ({menuIsShown, onClose}) => {
 
     return (
         <div className={classNames([styles.menu, {[styles.shown]: menuIsShown}])}>
-            <div className={styles.header}>
-                <span className={styles.close} onClick={onClose}>
-                    <Image src={closeIcon} alt={'close'} width={16} height={16}/>
-                </span>
-            </div>
             <div className={styles.list}>
                 {data.map(item => {
                     return (

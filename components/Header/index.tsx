@@ -1,4 +1,4 @@
-import {FC, useEffect, useRef, useState} from "react";
+import React, {FC, useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import classNames from "classnames";
@@ -53,7 +53,9 @@ const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
                 <div className={styles.headerMain}>
                     <div className={classNames([styles.headerMenu, {[styles.headerMenuOpen]: menuIsShown}])}>
                         <label onClick={() => toggleMenu(!menuIsShown)}>
-                            <Image src={menu} alt={'menu'} width={24} height={24}/>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </label>
                     </div>
                     <div className={styles.headerLogo}>
