@@ -4,10 +4,12 @@ import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import styles from './index.module.scss'
 import Button from "../Button";
+import {useRouter} from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Process = () => {
+    const router = useRouter();
     const ref = useRef<HTMLDivElement>(null);
 
     const data = [
@@ -92,6 +94,9 @@ const Process = () => {
         }
     ]
 
+    const learnMoreHandler = () => {
+        router.push('/building')
+    }
 
     useEffect(() => {
         const element = ref.current;
@@ -197,7 +202,7 @@ const Process = () => {
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <Button text={'Learn More'} variant={'link'}/>
+                                    <Button text={'Learn More'} variant={'link'} onClick={learnMoreHandler}/>
                                 </div>
                             )
                         })}
@@ -208,7 +213,7 @@ const Process = () => {
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <Button text={'Learn More'} variant={'link'}/>
+                                    <Button text={'Learn More'} variant={'link'} onClick={learnMoreHandler}/>
                                 </div>
                             )
                         })}
@@ -219,7 +224,7 @@ const Process = () => {
                                 <div key={service.title} className={styles.service}>
                                     <h3 key={service.title} className={styles.serviceTitle}>{service.title}</h3>
                                     <p className={styles.serviceDescription}>{service.description} </p>
-                                    <Button text={'Learn More'} variant={'link'}/>
+                                    <Button text={'Learn More'} variant={'link'} onClick={learnMoreHandler}/>
                                 </div>
                             )
                         })}

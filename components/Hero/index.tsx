@@ -1,13 +1,18 @@
 import styles from './index.module.scss'
 import Galaxy from "../Galaxy";
 import Button from "../Button";
-import {useRouter} from "next/router";
 
 const Hero = () => {
-    const router = useRouter();
+    const caseStudiesHandler = () => {
+        window.open('https://www.web3labs.com/casestudies')
+    }
 
-    const navigate = () => {
-        router.push('/building')
+    const talkToUsHandler = () => {
+        const section: HTMLDivElement | null = document.querySelector(`#section-contact`);
+        if (section) {
+            const top = section.offsetTop - 66;
+            window.scrollTo({top, behavior: 'smooth'});
+        }
     }
 
     return (
@@ -17,8 +22,8 @@ const Hero = () => {
                 description={'Capture the potential from a growing decentralized token economy'}
             />
             <div className={styles.actions}>
-                <Button text={'CASE STUDIES'} variant={'primary'} onClick={navigate}/>
-                <Button text={'TALK TO US'} variant={'primary-outline'} onClick={navigate}/>
+                <Button text={'CASE STUDIES'} variant={'primary'} onClick={caseStudiesHandler}/>
+                <Button text={'TALK TO US'} variant={'primary-outline'} onClick={talkToUsHandler}/>
             </div>
         </div>
     )
