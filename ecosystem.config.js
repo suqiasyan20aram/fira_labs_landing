@@ -10,7 +10,7 @@ module.exports = {
       host : '3.75.190.240',
       ref  : 'origin/master',
       repo : 'git@github.com:suqiasyan20aram/fira_labs_landing.git',
-      path : '',
+      path : '/home/bitnami/www/app',
       'pre-deploy-local': '',
       'post-deploy': 'source ~/.nvm/nvm.sh && npm install && npm run build && pm2 reload ecosystem.config.js --env production',
       'pre-setup': '',
