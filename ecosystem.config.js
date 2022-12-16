@@ -12,7 +12,7 @@ module.exports = {
       repo : 'git@github.com:suqiasyan20aram/fira_labs_landing.git',
       path : '',
       'pre-deploy-local': '',
-      'post-deploy' : 'npm run build && npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'source ~/.nvm/nvm.sh && npm install && npm run build && pm2 reload ecosystem.config.js --env production',
       'pre-setup': '',
       'ssh_options': 'ForwardAgent=yes'
     }
