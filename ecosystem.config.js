@@ -5,9 +5,11 @@ module.exports = {
 
   deploy : {
     production : {
-      key: 'key.pem',
+      // key: 'key.pem', // fira_labs
+      key: 'key-nginx-1.pem', // nginx-1
       user : 'bitnami',
-      host : '35.157.98.153',
+      // host : '35.157.98.153', // fira_labs
+      host : '54.93.126.157', // nginx-1
       ref  : 'origin/master',
       repo : 'git@github.com:suqiasyan20aram/fira_labs_landing.git',
       path : '/home/bitnami/fira_labs_landing',
