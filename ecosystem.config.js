@@ -7,7 +7,7 @@ module.exports = {
     production : {
       key: 'key.pem',
       user : 'bitnami',
-      host : '18.197.2.81',
+      host : '35.157.98.153',
       ref  : 'origin/master',
       repo : 'https://github.com/suqiasyan20aram/fira_labs_landing.git',
       path : '',
