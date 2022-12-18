@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from "next/image";
 
 import styles from './index.module.scss'
-import logo from '../../assets/images/decentures_square.svg'
+import logo from '../../assets/images/decentures_without_text.svg'
 import logoTextWhite from '../../assets/images/logo-text-white.svg'
 import footerLink1 from '../../assets/images/iso-footer-1.png'
 import footerLink2 from '../../assets/images/iso-footer-2.png'
@@ -205,7 +205,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Image src={logo} alt={'logo'} height={60}/>
+                    <Image src={logo} alt={'logo'}/>
                 </div>
             </div>
             <div className={styles.footerMiddleSection}>

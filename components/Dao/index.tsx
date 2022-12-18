@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import gsap from "gsap";
 import Image from "next/image";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
@@ -6,8 +6,8 @@ import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import styles from './index.module.scss'
 import bg from '../../assets/images/DAO-bg.png'
 import Button from "../Button";
-import {getRandomInteger} from "../../utils/constants";
 import {useRouter} from "next/router";
+import {getRandomInteger} from "../../utils/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,10 +15,8 @@ const Authors = () => {
     const router = useRouter();
     const ref = useRef<HTMLDivElement>(null);
 
-    const [style, setStyle] = useState({x: 0, y: 0})
-
     const letters = useMemo(() => {
-        return ["D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O"].map((figure) => {
+        return ["D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O", "D", "A", "O"].map((figure) => {
             return {
                 type: figure,
                 top: `${getRandomInteger(10, 90)}%`,
@@ -143,20 +141,11 @@ const Authors = () => {
             <h1 className={styles.sectionTitle}>Discover <span className={styles.highlight}>Decentures Ltd.</span></h1>
 
             <div className={styles.mainBlock}>
-                <div
-                    className={styles.avatarWrapper}
-                    style={{
-                        transform: `translateX(${-style.x / 30}px) translateY(${style.y / 40}px) translateZ(${style.y / 200}px)`
-                    }}>
+                <div className={styles.avatarWrapper}>
                     <Image src={bg} alt={'avatar'} width={350} height={350} className={styles.avatar}/>
                 </div>
 
-                <div
-                    className={styles.card}
-                    style={{
-                        transform: `translateX(${style.x / 30}px) translateY(${style.y / 40}px) translateZ(${style.y / 200}px)`
-                    }}
-                >
+                <div className={styles.card}>
                     <p className={styles.cardText}>
                         DAO-FL is a decentralized organization with members from Europe, UK, United States, Canada,
                         Western

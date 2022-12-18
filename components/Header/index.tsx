@@ -8,27 +8,24 @@ import logo from '../../assets/images/decentures_with_text.svg'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 interface HeaderProps {
-    animated?: boolean,
     menuIsShown: boolean,
     toggleMenu: (shown: boolean) => void
 }
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
+const Header: FC<HeaderProps> = ({menuIsShown, toggleMenu}) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const element = ref.current;
-        if (animated && element) {
-            let animation = gsap.fromTo(element.querySelector(`.${styles.headerOverlay}`),
+        if (element) {
+            let animation = gsap.fromTo(element.querySelector(`.${styles.header}`),
                 {
-                    scaleX: 1,
-                    scaleY: 0,
+                    backgroundColor: 'rgba(255,255,255,0)'
                 },
                 {
-                    scaleX: 1,
-                    scaleY: 1,
+                    backgroundColor: 'rgba(255,255,255,0.8)',
                     scrollTrigger: {
                         trigger: element,
                         start: "bottom top",
@@ -47,7 +44,6 @@ const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
     return (
         <div ref={ref} className={styles.headerWrapper}>
             <div className={styles.header}>
-                <div className={styles.headerOverlay}/>
                 <div className={styles.headerMain}>
                     <div className={classNames([styles.headerMenu, {[styles.headerMenuOpen]: menuIsShown}])}>
                         <label onClick={() => toggleMenu(!menuIsShown)}>
