@@ -63,48 +63,48 @@ const Authors = () => {
         })
     }, [])
 
-    const data = useMemo(() => {
-        return [
-            {
-                id: 1,
-                title: 'Robert Mkrtchian',
-                profession: 'Product, Operations',
-                nft: robNFT,
-                picture: robPicture,
-                social: [
-                    {id: 1, label: "Twitter", url: '', icon: <TwitterIcon/>},
-                    {id: 2, label: "Linkedin", url: '', icon: <LinkedinIcon/>},
-                ]
-            },
-            {
-                id: 2,
-                title: 'Narek Nadaryan',
-                profession: 'Software Engineer',
-                nft: narekNFT,
-                picture: narekPicture,
-                social: [
-                    {id: 1, label: "Github", url: '', icon: <GithubIcon/>},
-                    {id: 2, label: "Linkedin", url: '', icon: <LinkedinIcon/>},
-                ]
-            },
-            {
-                id: 3,
-                title: 'Aram Sukiasyan',
-                profession: 'Software Engineer',
-                nft: aramNFT,
-                picture: aramPicture,
-                social: [
-                    {id: 1, label: "Github", url: 'https://github.com/aramsuqiasyan', icon: <GithubIcon/>},
-                    {
-                        id: 2,
-                        label: "Linkedin",
-                        url: 'https://www.linkedin.com/in/aram-suqiasyan-476305180/',
-                        icon: <LinkedinIcon/>
-                    },
-                ]
-            },
-        ]
-    }, [])
+    // const data = useMemo(() => {
+    //     return [
+    //         {
+    //             id: 1,
+    //             title: 'Robert Mkrtchian',
+    //             profession: 'Product, Operations',
+    //             nft: robNFT,
+    //             picture: robPicture,
+    //             social: [
+    //                 {id: 1, label: "Twitter", url: '', icon: <TwitterIcon/>},
+    //                 {id: 2, label: "Linkedin", url: '', icon: <LinkedinIcon/>},
+    //             ]
+    //         },
+    //         {
+    //             id: 2,
+    //             title: 'Narek Nadaryan',
+    //             profession: 'Software Engineer',
+    //             nft: narekNFT,
+    //             picture: narekPicture,
+    //             social: [
+    //                 {id: 1, label: "Github", url: '', icon: <GithubIcon/>},
+    //                 {id: 2, label: "Linkedin", url: '', icon: <LinkedinIcon/>},
+    //             ]
+    //         },
+    //         {
+    //             id: 3,
+    //             title: 'Aram Sukiasyan',
+    //             profession: 'Software Engineer',
+    //             nft: aramNFT,
+    //             picture: aramPicture,
+    //             social: [
+    //                 {id: 1, label: "Github", url: 'https://github.com/aramsuqiasyan', icon: <GithubIcon/>},
+    //                 {
+    //                     id: 2,
+    //                     label: "Linkedin",
+    //                     url: 'https://www.linkedin.com/in/aram-suqiasyan-476305180/',
+    //                     icon: <LinkedinIcon/>
+    //                 },
+    //             ]
+    //         },
+    //     ]
+    // }, [])
 
     const onMouseMove = (e: any) => {
         const {top, left} = e.currentTarget.getBoundingClientRect();
@@ -135,41 +135,41 @@ const Authors = () => {
                     <div className={styles.sectionSubTitle}>
                         {text}
                     </div>
-                    <div className={styles.cards}>
-                        {data.map((item, index) => {
-                            return (
-                                <div key={item.id}
-                                     className={styles.card}
-                                >
-                                    <div className={styles.cardText}>
-                                        <div className={styles.glitchImages}>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>
-                                            <Image src={item.picture} alt={'nft'} className={styles.pictureImage}/>
-                                        </div>
-                                        <div className={styles.cardInformation}>
-                                            <h2 className={styles.cardTitle}>{item.title}</h2>
-                                            <p className={styles.cardDescription}>{item.profession}</p>
-                                            <div className={styles.cardSocials}>
-                                                {item.social.map((social) => {
-                                                    return (
-                                                        <a key={social.id} href={social.url}
-                                                           className={styles.cardSocial}>
-                                                            {social.icon}
-                                                        </a>
-                                                    )
-                                                })}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    {/*<div className={styles.cards}>*/}
+                    {/*    {data.map((item, index) => {*/}
+                    {/*        return (*/}
+                    {/*            <div key={item.id}*/}
+                    {/*                 className={styles.card}*/}
+                    {/*            >*/}
+                    {/*                <div className={styles.cardText}>*/}
+                    {/*                    <div className={styles.glitchImages}>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.nft} alt={'nft'} className={styles.glitchImage}/>*/}
+                    {/*                        <Image src={item.picture} alt={'nft'} className={styles.pictureImage}/>*/}
+                    {/*                    </div>*/}
+                    {/*                    <div className={styles.cardInformation}>*/}
+                    {/*                        <h2 className={styles.cardTitle}>{item.title}</h2>*/}
+                    {/*                        <p className={styles.cardDescription}>{item.profession}</p>*/}
+                    {/*                        <div className={styles.cardSocials}>*/}
+                    {/*                            {item.social.map((social) => {*/}
+                    {/*                                return (*/}
+                    {/*                                    <a key={social.id} href={social.url}*/}
+                    {/*                                       className={styles.cardSocial}>*/}
+                    {/*                                        {social.icon}*/}
+                    {/*                                    </a>*/}
+                    {/*                                )*/}
+                    {/*                            })}*/}
+                    {/*                        </div>*/}
+                    {/*                    </div>*/}
+                    {/*                </div>*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*    })}*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </div>
