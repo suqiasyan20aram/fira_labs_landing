@@ -138,7 +138,7 @@ const Authors = () => {
 
     return (
         <div id={'section-dao'} ref={ref} className={styles.sections}>
-            <h1 className={styles.sectionTitle}>Discover <span className={styles.highlight}>Decentures Ltd.</span></h1>
+            <h1 className={styles.sectionTitle}>Discover <span className={styles.highlight}>Fira Labs DAO</span></h1>
 
             <div className={styles.mainBlock}>
                 <div className={styles.avatarWrapper}>
