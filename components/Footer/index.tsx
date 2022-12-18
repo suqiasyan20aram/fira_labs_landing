@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from "next/image";
 
 import styles from './index.module.scss'
-import logo1 from '../../assets/images/logo-part-1-white.svg'
-import logo2 from '../../assets/images/logo-part-2-white.svg'
+import logo from '../../assets/images/decentures_square.svg'
+import logoTextWhite from '../../assets/images/logo-text-white.svg'
 import footerLink1 from '../../assets/images/iso-footer-1.png'
 import footerLink2 from '../../assets/images/iso-footer-2.png'
 import footerLink3 from '../../assets/images/iso-footer-3.png'
@@ -15,15 +15,15 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.left}>
-                    <Image src={logo1} alt={'logo'}/>
+                    <Image src={logoTextWhite} alt={'logo'} height={40}/>
                 </div>
                 <div className={styles.main}>
                     <div className={styles.column}>
                         <div className={styles.category}>
-                            <h2 className={styles.categoryTitle}>Fira Labs DAO</h2>
+                            <h2 className={styles.categoryTitle}>Decentures Ltd.</h2>
                             <div className={styles.categoryItems}>
                                 <p className={styles.categoryItem}>
-                                    <Link href={'/building'}>About Fira Labs DAO</Link>
+                                    <Link href={'/building'}>About Decentures Ltd.</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
                                     <Link href={'/building'}>Message from Community</Link>
@@ -205,7 +205,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <Image src={logo2} alt={'logo'}/>
+                    <Image src={logo} alt={'logo'} height={60}/>
                 </div>
             </div>
             <div className={styles.footerMiddleSection}>
@@ -238,8 +238,8 @@ const Footer = () => {
                     <Link href={'/building'} className={styles.footerCopySectionLink}>Data Processing Agreement</Link>
                 </div>
                 <p className={styles.copyRight}>
-                    <span className={styles.copyRightRow}>FiraLabs Dao.All Rights Reserved.</span>
-                    <span className={styles.copyRightRow}>© 2023 FiraLabs and Logo Are Registered Trademarks Of FiraLabs Dao</span>
+                    <span className={styles.copyRightRow}>Decentures Ltd. All Rights Reserved.</span>
+                    <span className={styles.copyRightRow}>© 2023 Decentures and Logo Are Registered Trademarks Of Decentures Ltd.</span>
                 </p>
             </div>
         </footer>

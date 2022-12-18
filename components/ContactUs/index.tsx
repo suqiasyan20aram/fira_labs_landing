@@ -19,7 +19,7 @@ const ContactUs = () => {
     const [rows, setRows] = useState<Row[]>([]);
 
     const createNewRow = (params?: Partial<Row>) => {
-        const newRow: Row = {text: 'client@fira-labs-Dao ~ %', ...params}
+        const newRow: Row = {text: 'client@Decentures ~ %', ...params}
         setRows(prev => [...prev, newRow])
         setTimeout(() => {
             // @ts-ignore
@@ -106,8 +106,8 @@ const ContactUs = () => {
 
         const formData = new FormData();
         const params = {
-            access_key: '3e57b516-a17d-4b54-90a5-a5bddfb515d2', // rob fira
-            subject: "FIRA LABS",
+            access_key: '3e57b516-a17d-4b54-90a5-a5bddfb515d2',
+            subject: "Decentures Ltd.",
             redirect: 'https://web3forms.com/success',
             name: info.name,
             feedback: info.subject,

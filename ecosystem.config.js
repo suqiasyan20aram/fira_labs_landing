@@ -5,9 +5,9 @@ module.exports = {
 
   deploy : {
     production : {
-      key: 'key.pem', // fira_labs
+      key: 'key.pem',
       user : 'bitnami',
-      host : '35.157.98.153', // fira_labs
+      host : '35.157.98.153',
       ref  : 'origin/master',
       repo : 'git@github.com:suqiasyan20aram/fira_labs_landing.git',
       path : '/home/bitnami/fira_labs_landing',

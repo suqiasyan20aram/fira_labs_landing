@@ -25,7 +25,7 @@
 
     .right {
       img {
-        transform: rotate(90deg);
+        //transform: rotate(90deg);
       }
     }
 
@@ -156,6 +156,12 @@
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .right{
+
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .footer {
     .container {
@@ -248,9 +254,10 @@
       padding: 24px;
       justify-content: flex-start;
 
-      .left, .right {
+      .left {
         width: auto;
         height: 40px;
+        margin-right: 8px;
 
         img {
           width: 100%;
@@ -258,8 +265,8 @@
         }
       }
 
-      .left {
-        margin-right: 8px;
+      .right {
+        display: none;
       }
 
       .column {
@@ -320,7 +327,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
-        .copyRightRow{
+        .copyRightRow {
           text-align: left;
         }
       }
@@ -331,7 +338,7 @@
 @media screen and (max-width: 425px) {
   .footer {
     .container {
-      .left, .right {
+      .left {
         height: 40px;
       }
     }

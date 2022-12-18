@@ -43,7 +43,7 @@ const Menu: React.FC<MenuProps> = ({menuIsShown, onClose}) => {
             },
             {
                 id: 5,
-                title: 'Fira Labs DAO',
+                title: 'Decentures Ltd.',
                 sectionId: 'section-dao'
             },
             {

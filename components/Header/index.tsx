@@ -4,9 +4,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import styles from './index.module.scss'
-import menu from '../../assets/images/menu.svg'
-import firaLogoPart1 from '../../assets/images/logo-part-1.svg'
-import firaLogoPart2 from '../../assets/images/logo-part-2.svg'
+import logo from '../../assets/images/decentures_with_text.svg'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 interface HeaderProps {
@@ -59,8 +57,7 @@ const Header: FC<HeaderProps> = ({animated, menuIsShown, toggleMenu}) => {
                         </label>
                     </div>
                     <div className={styles.headerLogo}>
-                        <Image src={firaLogoPart1} alt={'logo'} width={80}/>
-                        <Image src={firaLogoPart2} alt={'logo'} width={80} style={{marginLeft: 10}}/>
+                        <Image src={logo} alt={'logo'} height={40}/>
                     </div>
                     <div className={styles.headerSocials}>
                     <span className={styles.headerSocialIcon}>

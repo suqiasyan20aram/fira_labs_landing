@@ -3,7 +3,7 @@ import gsap from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 import styles from './index.module.scss'
-import firaLogo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/decentures_without_text.svg'
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +94,7 @@ const Line = () => {
                     return (
                         <React.Fragment key={index}>
                             <span className={styles.word}>{word}</span>
-                            <Image src={firaLogo} alt={'logo'} className={styles.logo}/>
+                            <Image src={logo} alt={'logo'} className={styles.logo}/>
                         </React.Fragment>
                     )
                 })}
@@ -104,7 +104,7 @@ const Line = () => {
                     return (
                         <React.Fragment key={index}>
                             <span className={styles.word}>{word}</span>
-                            <Image src={firaLogo} alt={'logo'} className={styles.logo}/>
+                            <Image src={logo} alt={'logo'} className={styles.logo}/>
                         </React.Fragment>
                     )
                 })}

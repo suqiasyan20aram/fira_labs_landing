@@ -195,7 +195,7 @@ export default function Home() {
                     </div>
                 </div>
                 <p className={styles.copyRight}>
-                    © 2023 FiraLabs Dao. All Rights Reserved.
+                    © 2023 Decentures Ltd. All Rights Reserved.
                 </p>
             </div>
         </div>
