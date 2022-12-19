@@ -5,11 +5,13 @@ import classNames from "classnames";
 
 interface Row {
     text: string,
-    className?: string
+    className?: string,
+    autoFocus?: boolean
 }
 
 const ContactUs = () => {
     const inputRef = useRef(null);
+    let focusTimer = useRef<number>(0);
     const [info, setInfo] = useState({
         name: '',
         email: '',
@@ -21,10 +23,15 @@ const ContactUs = () => {
     const createNewRow = (params?: Partial<Row>) => {
         const newRow: Row = {text: 'client@Decentures ~ %', ...params}
         setRows(prev => [...prev, newRow])
-        setTimeout(() => {
+        clearTimeout(focusTimer.current)
+        if (params?.autoFocus) {
             // @ts-ignore
-            inputRef?.current?.focus()
-        }, 0)
+            focusTimer.current = setTimeout(() => {
+                // @ts-ignore
+                inputRef?.current?.focus();
+                console.log(123)
+            }, 0)
+        }
     }
 
     const getFirstEmptyRowType = (info: any) => {
@@ -46,11 +53,11 @@ const ContactUs = () => {
     }
 
     const onInsetText = (type: string, text: string) => {
-        createNewRow({text});
+        createNewRow({text, autoFocus: true});
 
         setInfo(prev => {
             const newInfo = {...prev, [type]: text};
-            const nextRowParams = {text: getNextRowText(getFirstEmptyRowType(newInfo))};
+            const nextRowParams = {text: getNextRowText(getFirstEmptyRowType(newInfo)), autoFocus: true};
             nextRowParams.text = nextRowParams.text ? nextRowParams.text : "We've received your email and will get back soon!"
             createNewRow(nextRowParams);
             if (!getFirstEmptyRowType(newInfo)) {
@@ -83,26 +90,31 @@ const ContactUs = () => {
     const onComplete = async (info: any) => {
         createNewRow({
             text: replaceSpaces(`  ________                __      __  __           `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         })
         createNewRow({
             text: replaceSpaces(` /_  __/ /_  ____ _____  / /__    \\ \\/ /___  __  __`),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         })
         createNewRow({
             text: replaceSpaces(`  / / / __ \\/ __ \`/ __ \\/ //_/     \\  / __ \\/ / / /`),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         })
         createNewRow({
             text: replaceSpaces(`&nbsp;/ / / / / / /_/ / / / / ,<        / / /_/ / /_/ / `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         })
         createNewRow({
             text: replaceSpaces(`/_/ /_/ /_/\\__,_/_/ /_/_/|_|      /_/\\____/\\__,_/  `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         })
-        createNewRow({text: `&nbsp;`, className: styles.bigText});
-        createNewRow({text: `&nbsp;`, className: styles.bigText});
+        createNewRow({text: `&nbsp;`, className: styles.bigText, autoFocus: false});
+        createNewRow({text: `&nbsp;`, className: styles.bigText, autoFocus: false});
 
         const formData = new FormData();
         const params = {
@@ -136,29 +148,34 @@ const ContactUs = () => {
     useEffect(() => {
         createNewRow({
             text: replaceSpaces(`   ______            __             __               `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         });
         createNewRow({
             text: replaceSpaces(`  / ____/___  ____  / /_____ ______/ /_   __  _______`),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         });
         createNewRow({
             text: replaceSpaces(` / /   / __ \\/ __ \\/ __/ __ \`/ ___/ __/  / / / / ___/`),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         });
         createNewRow({
             text: replaceSpaces(`/ /___/ /_/ / / / / /_/ /_/ / /__/ /_   / /_/ (__  ) `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         });
         createNewRow({
             text: replaceSpaces(`\\____/\\____/_/ /_/\\__/\\__,_/\\___/\\__/   \\__,_/____/  `),
-            className: styles.bigText
+            className: styles.bigText,
+            autoFocus: false
         });
-        createNewRow({text: `&nbsp;`, className: styles.bigText});
-        createNewRow({text: `&nbsp;`, className: styles.bigText});
-        createNewRow();
+        createNewRow({text: `&nbsp;`, className: styles.bigText, autoFocus: false});
+        createNewRow({text: `&nbsp;`, className: styles.bigText, autoFocus: false});
+        createNewRow({autoFocus: false});
 
-        const nextRowParams = {text: getNextRowText(getFirstEmptyRowType(info))};
+        const nextRowParams = {text: getNextRowText(getFirstEmptyRowType(info)), autoFocus: false};
         createNewRow(nextRowParams)
 
     }, [])
