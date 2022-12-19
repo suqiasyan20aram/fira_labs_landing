@@ -29,7 +29,6 @@ const ContactUs = () => {
             focusTimer.current = setTimeout(() => {
                 // @ts-ignore
                 inputRef?.current?.focus();
-                console.log(123)
             }, 0)
         }
     }
