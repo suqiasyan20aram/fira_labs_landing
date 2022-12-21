@@ -4,7 +4,7 @@ import Button from "../Button";
 
 const Hero = () => {
     const caseStudiesHandler = () => {
-        window.open('https://www.web3labs.com/casestudies')
+        location.href = '/building';
     }
 
     const talkToUsHandler = () => {
