@@ -147,6 +147,7 @@ const Authors = () => {
 
                 <div className={styles.card}>
                     <p className={styles.cardText}>
+                        DAO-FL is our long-time trusted business partner.
                         DAO-FL is a decentralized organization with members from Europe, UK, United States, Canada,
                         Western
                         Asia and UAE.

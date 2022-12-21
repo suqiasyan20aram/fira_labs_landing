@@ -4,7 +4,7 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import styles from './index.module.scss'
-import logo from '../../assets/images/decentures_with_text.svg'
+import logo from '../../assets/images/decentures-header.svg'
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 interface HeaderProps {
@@ -16,6 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Header: FC<HeaderProps> = ({menuIsShown, toggleMenu}) => {
     const ref = useRef<HTMLDivElement>(null);
+
+    const letsTalkClickHandler = () => {
+        const section: HTMLDivElement | null = document.querySelector(`#section-contact`);
+        if (section) {
+            const top = section.offsetTop - 66;
+            window.scrollTo({top, behavior: 'smooth'});
+            (section.querySelector('[contenteditable="true"]') as HTMLInputElement)?.focus()
+        }
+    }
 
     useEffect(() => {
         const element = ref.current;
@@ -66,7 +75,11 @@ const Header: FC<HeaderProps> = ({menuIsShown, toggleMenu}) => {
                         <i className={'icon-linkedin'}></i>
                     </span>
                         <span
-                            className={classNames('text-16', 'text-black', 'cursor-pointer', styles.headerSocialIcon)}>LET’S TALK</span>
+                            onClick={letsTalkClickHandler}
+                            className={classNames('text-16', 'text-black', 'cursor-pointer', styles.headerSocialIcon)}
+                        >
+                            LET’S TALK
+                        </span>
                     </div>
                 </div>
             </div>

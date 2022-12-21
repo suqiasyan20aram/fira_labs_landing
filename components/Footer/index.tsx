@@ -29,13 +29,10 @@ const Footer = () => {
                                     <Link href={'/building'}>Message from Community</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <Link href={'/building'}>Members and Associates</Link>
-                                </p>
-                                <p className={styles.categoryItem}>
                                     <Link href={'/building'}>Partners</Link>
                                 </p>
                                 <p className={styles.categoryItem}>
-                                    <Link href={'/building'}>Join our DAO</Link>
+                                    <Link href={'/building'}>Join DAO-FL</Link>
                                 </p>
                             </div>
                         </div>
@@ -216,7 +213,7 @@ const Footer = () => {
                     <Image src={footerLink4} alt={'link'}/>
                 </div>
                 <div className={styles.footerSocials}>
-                    <a href={'mailto:enquiry@firalabs.com'}>enquiry@firalabs.com</a>
+                    <a href={'mailto:enquiry@decentures.com'}>enquiry@decentures.com</a>
                     <a href={'https://telegram.com'} className={styles.headerSocialIcon}>
                         <i className={'icon-telegram'}></i>
                     </a>
